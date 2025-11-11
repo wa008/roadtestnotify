@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Road Test Notify - Get Notified When New Slots Open</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            color: #0066cc;
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .tagline {
+            color: #333;
+            font-size: 1.3em;
+            font-weight: 400;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            background-color: #ffffff;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #0066cc;
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #333;
+            min-width: 100px;
+            margin-right: 10px;
+        }
+
+        .info-value {
+            color: #333;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .contact-link {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .tagline {
+                font-size: 1.1em;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-item {
+                flex-direction: column;
+            }
+
+            .info-label {
+                margin-bottom: 5px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.6em;
+            }
+
+            .tagline {
+                font-size: 1em;
+            }
+
+            header {
+                padding: 30px 15px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Road Test Notify</h1>
+        <p class="tagline">Get notified as soon as a driver's road test slot is released</p>
+    </header>
+
+    <div class="container">
+        <div class="content-section">
+            <h2>Introduction</h2>
+            <p style="margin-bottom: 15px; color: #333; font-size: 1.05em;">If you've spent hours manually refreshing the DriveTest website for a G2 or G appointment, our service monitors the slots for you.</p>
+            <p style="color: #333; font-size: 1.05em;">You will receive an instant text message (SMS) notification the moment a new road test slot is released at your preferred location. Be the first to book.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>Current Coverage</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="info-label">Test Types:</span>
+                    <span class="info-value">G, G2</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Location:</span>
+                    <span class="info-value">Ottawa Walkley</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Contact</h2>
+            <p style="margin-bottom: 20px; color: #333; font-size: 1.05em;">Interested in receiving notifications for new road test slots? Contact me for this service.</p>
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="info-label">Name:</span>
+                    <span class="info-value">Benson</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Email:</span>
+                    <span class="info-value">
+                        <a href="mailto:zphu1024@gmail.com" class="contact-link">zphu1024@gmail.com</a>
+                    </span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Phone:</span>
+                    <span class="info-value">
+                        <a href="tel:+16137976457" class="contact-link">+1 (613) 797-6457</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 roadtestnotify.ca - Road Test Slot Notification Service for Ontario</p>
+    </footer>
+</body>
+</html>
