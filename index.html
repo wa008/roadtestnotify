@@ -33,32 +33,6 @@
             margin-bottom: 40px;
         }
 
-        .nav-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 30px;
-            flex-wrap: wrap;
-        }
-
-        .nav-button {
-            background-color: #0066cc;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1em;
-            font-weight: 600;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            text-decoration: none;
-            font-family: 'Open Sans', Arial, sans-serif;
-        }
-
-        .nav-button:hover {
-            background-color: #0052a3;
-        }
-
         h1 {
             color: #0066cc;
             font-size: 3em;
@@ -78,7 +52,6 @@
             background-color: #ffffff;
             padding: 30px;
             margin-bottom: 30px;
-            border-radius: 4px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
@@ -112,11 +85,109 @@
             color: #333;
         }
 
-        footer {
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .pricing-card {
+            padding: 30px;
             text-align: center;
-            padding: 30px 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .pricing-card.featured {
+            background: linear-gradient(135deg, #e8f4ff 0%, #ffffff 100%);
+            box-shadow: 0 4px 12px rgba(0,102,204,0.15);
+            position: relative;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #0066cc;
+            color: white;
+            padding: 5px 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .pricing-card h3 {
+            color: #0066cc;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .price {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .price-period {
+            font-size: 0.4em;
             color: #666;
-            font-size: 0.9em;
+        }
+
+        .price-description {
+            color: #666;
+            margin-bottom: 25px;
+            font-size: 0.95em;
+        }
+
+        .features-list {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .features-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+
+        .select-button {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            width: 100%;
+            font-family: 'Open Sans', Arial, sans-serif;
+        }
+
+        .select-button:hover {
+            background-color: #0052a3;
+        }
+
+        .payment-note {
+            margin-top: 25px;
+            color: #666;
+            font-size: 0.95em;
+            text-align: center;
         }
 
         .contact-link {
@@ -126,6 +197,13 @@
 
         .contact-link:hover {
             text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #666;
+            font-size: 0.9em;
         }
 
         @media (max-width: 768px) {
@@ -141,16 +219,16 @@
                 padding: 20px;
             }
 
-            .info-grid {
-                grid-template-columns: 1fr;
-            }
-
             .info-item {
                 flex-direction: column;
             }
 
             .info-label {
                 margin-bottom: 5px;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -172,10 +250,6 @@
             }
         }
     </style>
-<script>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-</script>
-<script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
     <header>
@@ -194,7 +268,7 @@
             <h2>Example</h2>
             <p style="margin-bottom: 20px; color: #333; font-size: 1.05em;">This is the message you will receive:</p>
             <div style="text-align: left;">
-                <img src="images/sms-example.png" alt="SMS notification example" style="max-width: 300px; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+                <img src="images/sms-example.png" alt="SMS notification example" style="max-width: 300px; height: auto; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
             </div>
         </div>
 
@@ -210,6 +284,48 @@
                     <span class="info-value">Ottawa Walkley</span>
                 </div>
             </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Price and Payment</h2>
+            <p style="margin-bottom: 25px; color: #333; font-size: 1.05em;">Choose the plan that works best for you:</p>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>10-Day Plan</h3>
+                    <div class="price">$5</div>
+                    <p class="price-description">Perfect for quick booking</p>
+                    <ul class="features-list">
+                        <li>✓ 10 days of monitoring</li>
+                        <li>✓ Instant SMS notifications</li>
+                        <li>✓ One-time payment</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/demo_10day_plan" class="select-button">Select Plan</a>
+                </div>
+                <div class="pricing-card featured">
+                    <div class="popular-badge">POPULAR</div>
+                    <h3>30-Day Plan</h3>
+                    <div class="price">$10</div>
+                    <p class="price-description">Best value for most users</p>
+                    <ul class="features-list">
+                        <li>✓ 30 days of monitoring</li>
+                        <li>✓ Instant SMS notifications</li>
+                        <li>✓ One-time payment</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/demo_30day_plan" class="select-button">Select Plan</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Monthly Subscription</h3>
+                    <div class="price">$10<span class="price-period">/month</span></div>
+                    <p class="price-description">Continuous monitoring</p>
+                    <ul class="features-list">
+                        <li>✓ Unlimited monitoring</li>
+                        <li>✓ Instant SMS notifications</li>
+                        <li>✓ Cancel anytime</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/demo_monthly_subscription" class="select-button">Select Plan</a>
+                </div>
+            </div>
+            <p class="payment-note">All payments are securely processed through Stripe</p>
         </div>
 
         <div class="content-section">
