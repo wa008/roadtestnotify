@@ -87,13 +87,14 @@
 
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
             margin-top: 30px;
+            max-width: 600px;
         }
 
         .pricing-card {
-            padding: 30px;
+            padding: 25px;
             text-align: center;
             background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -102,25 +103,6 @@
         .pricing-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        }
-
-        .pricing-card.featured {
-            background: linear-gradient(135deg, #e8f4ff 0%, #ffffff 100%);
-            box-shadow: 0 4px 12px rgba(0,102,204,0.15);
-            position: relative;
-        }
-
-        .popular-badge {
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #0066cc;
-            color: white;
-            padding: 5px 20px;
-            font-size: 0.85em;
-            font-weight: 600;
-            letter-spacing: 1px;
         }
 
         .pricing-card h3 {
@@ -301,18 +283,6 @@
                     </ul>
                     <a href="https://buy.stripe.com/demo_10day_plan" class="select-button">Select Plan</a>
                 </div>
-                <div class="pricing-card featured">
-                    <div class="popular-badge">POPULAR</div>
-                    <h3>30-Day Plan</h3>
-                    <div class="price">$10</div>
-                    <p class="price-description">Best value for most users</p>
-                    <ul class="features-list">
-                        <li>✓ 30 days of monitoring</li>
-                        <li>✓ Instant SMS notifications</li>
-                        <li>✓ One-time payment</li>
-                    </ul>
-                    <a href="https://buy.stripe.com/demo_30day_plan" class="select-button">Select Plan</a>
-                </div>
                 <div class="pricing-card">
                     <h3>Monthly Subscription</h3>
                     <div class="price">$10<span class="price-period">/month</span></div>
@@ -325,6 +295,7 @@
                     <a href="https://buy.stripe.com/demo_monthly_subscription" class="select-button">Select Plan</a>
                 </div>
             </div>
+            <p class="payment-note">You will receive message in example after payment automatically</p>
             <p class="payment-note">All payments are securely processed through Stripe</p>
         </div>
 
