@@ -62,6 +62,36 @@
             margin-bottom: 20px;
         }
 
+        h3 {
+            color: #333;
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .scope-list {
+            list-style-type: disc;
+            margin-left: 30px;
+            color: #333;
+            font-size: 1.05em;
+        }
+
+        .scope-list li {
+            margin-bottom: 8px;
+        }
+
+        .scope-section {
+            margin-top: 15px;
+        }
+
+        .scope-category {
+            margin-bottom: 25px;
+        }
+
+        .scope-category:last-child {
+            margin-bottom: 0;
+        }
+
         .info-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -165,13 +195,6 @@
             background-color: #0052a3;
         }
 
-        .payment-note {
-            margin-top: 25px;
-            color: #666;
-            font-size: 0.95em;
-            text-align: center;
-        }
-
         .contact-link {
             color: #333;
             text-decoration: none;
@@ -179,6 +202,18 @@
 
         .contact-link:hover {
             text-decoration: underline;
+        }
+
+        .image-placeholder {
+            max-width: 300px;
+            height: 200px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-style: italic;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
 
         footer {
@@ -250,26 +285,29 @@
             <h2>Example</h2>
             <p style="margin-bottom: 20px; color: #333; font-size: 1.05em;">This is a message notification example you will receive:</p>
             <div style="text-align: left;">
-                <img src="images/sms-example.png" alt="SMS notification example" style="max-width: 300px; height: auto; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+                <div class="image-placeholder">[SMS Example]</div>
             </div>
         </div>
 
         <div class="content-section">
             <h2>Scope</h2>
-            <div style="margin-top: 15px;">
-                <h3 style="color: #333; font-size: 1.1em; font-weight: 600; margin-bottom: 10px;">Test Types:</h3>
-                <ul style="list-style-type: disc; margin-left: 30px; color: #333; font-size: 1.05em;">
-                    <li style="margin-bottom: 8px;">G</li>
-                    <li style="margin-bottom: 8px;">G2</li>
-                </ul>
+            <div class="scope-section">
+                <div class="scope-category">
+                    <h3>Test Types:</h3>
+                    <ul class="scope-list">
+                        <li>G</li>
+                        <li>G2</li>
+                    </ul>
+                </div>
                 
-                <h3 style="color: #333; font-size: 1.1em; font-weight: 600; margin-bottom: 10px; margin-top: 25px;">Locations:</h3>
-                <ul style="list-style-type: disc; margin-left: 30px; color: #333; font-size: 1.05em;">
-                    <li style="margin-bottom: 8px;">Toronto Downsview</li>
-                    <li style="margin-bottom: 8px;">Toronto Etobicoke</li>
-                </ul>
+                <div class="scope-category">
+                    <h3>Locations:</h3>
+                    <ul class="scope-list">
+                        <li>Toronto Downsview</li>
+                        <li>Toronto Etobicoke</li>
+                    </ul>
+                </div>
             </div>
-        </div>
         </div>
 
         <div class="content-section">
