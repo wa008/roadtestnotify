@@ -2,13 +2,14 @@
 
 ## Quick Start
 
-The fixed top navigation bar has been created as a reusable component. It's already integrated into your main `index.html` page.
+The fixed top navigation bar has been created as a reusable component. It's already integrated into all pages.
 
 ## Files Created
 
-- **`shared/topbar.html`** - The HTML structure of the navigation bar
+- **`shared/topbar.html`** - The HTML structure of the navigation bar (template)
 - **`shared/topbar.css`** - All styling for the navigation bar
 - **`shared/topbar.js`** - JavaScript for mobile menu toggle and active page highlighting
+- **`shared/topbar-loader.js`** - Optional loader for dynamic topbar injection (requires web server)
 
 ## How to Add the Topbar to Other Pages
 

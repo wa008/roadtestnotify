@@ -54,8 +54,10 @@
                 const dataPage = link.getAttribute('data-page');
                 if (dataPage) {
                     if ((dataPage === 'home' && (currentPath === '/' || currentPath.includes('index.html'))) ||
+                        (dataPage === 'subscribe' && currentPath.includes('subscribe')) ||
                         (dataPage === 'statistics' && currentPath.includes('statistics')) ||
-                        (dataPage === 'faq' && currentPath.includes('faq'))) {
+                        (dataPage === 'faq' && currentPath.includes('faq')) ||
+                        (dataPage === 'contact' && currentPath.includes('contact'))) {
                         link.classList.add('active');
                     }
                 }

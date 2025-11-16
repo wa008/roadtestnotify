@@ -95,118 +95,6 @@
             margin-bottom: 0;
         }
 
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .info-item {
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .info-label {
-            font-weight: 600;
-            color: #333;
-            min-width: 100px;
-            margin-right: 10px;
-        }
-
-        .info-value {
-            color: #333;
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-            max-width: 600px;
-        }
-
-        .pricing-card {
-            padding: 25px;
-            text-align: center;
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-        }
-
-        .pricing-card h3 {
-            color: #0066cc;
-            font-size: 1.3em;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .price {
-            font-size: 2.5em;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .price-period {
-            font-size: 0.4em;
-            color: #666;
-        }
-
-        .price-description {
-            color: #666;
-            margin-bottom: 25px;
-            font-size: 0.95em;
-        }
-
-        .features-list {
-            list-style: none;
-            text-align: left;
-            margin-bottom: 30px;
-            color: #333;
-        }
-
-        .features-list li {
-            padding: 10px 0;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .features-list li:last-child {
-            border-bottom: none;
-        }
-
-        .select-button {
-            background-color: #0066cc;
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            font-size: 1em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            width: 100%;
-            font-family: 'Open Sans', Arial, sans-serif;
-        }
-
-        .select-button:hover {
-            background-color: #0052a3;
-        }
-
-        .contact-link {
-            color: #333;
-            text-decoration: none;
-        }
-
-        .contact-link:hover {
-            text-decoration: underline;
-        }
-
         .image-placeholder {
             max-width: 300px;
             height: 200px;
@@ -231,18 +119,6 @@
             .content-section {
                 padding: 20px;
             }
-
-            .info-item {
-                flex-direction: column;
-            }
-
-            .info-label {
-                margin-bottom: 5px;
-            }
-
-            .pricing-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
         @media (max-width: 480px) {
@@ -265,29 +141,37 @@
     </style>
 </head>
 <body>
-<!-- Fixed Top Navigation Bar -->
-<nav id="topbar" class="topbar">
-    <div class="topbar-container">
-        <a href="/" class="topbar-brand">Road Test Notify</a>
-        
-        <button class="topbar-toggle" id="topbarToggle" aria-label="Toggle navigation">
-            <span class="hamburger-icon">☰</span>
-        </button>
-        
-        <ul class="topbar-menu" id="topbarMenu">
-            <li class="topbar-item">
-                <a href="/" class="topbar-link" data-page="home">Home</a>
-            </li>
-            <li class="topbar-item">
-                <a href="/statistics" class="topbar-link" data-page="statistics">Release Statistics</a>
-            </li>
-            <li class="topbar-item">
-                <a href="/faq" class="topbar-link" data-page="faq">FAQ</a>
-            </li>
-            <!-- Add more navigation items here as needed -->
-        </ul>
-    </div>
-</nav>    <header>
+    <!-- Fixed Top Navigation Bar -->
+    <nav id="topbar" class="topbar">
+        <div class="topbar-container">
+            <a href="/" class="topbar-brand">Road Test Notify</a>
+            
+            <button class="topbar-toggle" id="topbarToggle" aria-label="Toggle navigation">
+                <span class="hamburger-icon">☰</span>
+            </button>
+            
+            <ul class="topbar-menu" id="topbarMenu">
+                <li class="topbar-item">
+                    <a href="/" class="topbar-link" data-page="home">Home</a>
+                </li>
+                <li class="topbar-item">
+                    <a href="/subscribe" class="topbar-link" data-page="subscribe">Subscribe</a>
+                </li>
+                <li class="topbar-item">
+                    <a href="/statistics" class="topbar-link" data-page="statistics">Release Statistics</a>
+                </li>
+                <li class="topbar-item">
+                    <a href="/faq" class="topbar-link" data-page="faq">FAQ</a>
+                </li>
+                <li class="topbar-item">
+                    <a href="/contact" class="topbar-link" data-page="contact">Contact</a>
+                </li>
+                <!-- Add more navigation items here as needed -->
+            </ul>
+        </div>
+    </nav>
+
+    <header>
         <h1>Road Test Notify</h1>
         <p class="tagline">Get notified as soon as a recent driver's road test slot is released</p>
     </header>
@@ -295,7 +179,7 @@
     <div class="container">
         <div class="content-section">
             <h2>Introduction</h2>
-            <p style="margin-bottom: 15px; color: #333; font-size: 1.05em;">If you've spent hours manually refreshing the DriveTest website for a G2 or G appointment, our service monitors the slots for you.</p>
+            <p style="margin-bottom: 15px; color: #333; font-size: 1.05em;">If you want to book a recent driver road test appointment fast, our service monitors the slots for you.</p>
             <p style="color: #333; font-size: 1.05em;">You will receive an instant text message (SMS) notification the moment a new road test slot is released at your preferred location. Be the first to book.</p>
         </div>
 
@@ -340,60 +224,6 @@
                     </ul>
                 </div>
                 <p style="margin-top: 25px; color: #333; font-size: 1.05em;">Contact me if your place isn't on the list.</p>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <h2>Price and Payment</h2>
-            <p style="margin-bottom: 25px; color: #333; font-size: 1.05em;">Choose the plan that works best for you:</p>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>10-Day Plan</h3>
-                    <div class="price">$5</div>
-                    <p class="price-description">Perfect for quick booking</p>
-                    <ul class="features-list">
-                        <li>✓ 10 days of monitoring</li>
-                        <li>✓ Instant SMS notifications</li>
-                        <li>✓ One-time payment</li>
-                    </ul>
-                    <a href="https://buy.stripe.com/8x29AV97e7qCg7KdsU4AU02" class="select-button">Select Plan</a>
-                </div>
-                <div class="pricing-card">
-                    <h3>Monthly Subscription</h3>
-                    <div class="price">$10<span class="price-period">/month</span></div>
-                    <p class="price-description">Continuous monitoring</p>
-                    <ul class="features-list">
-                        <li>✓ Unlimited monitoring</li>
-                        <li>✓ Instant SMS notifications</li>
-                        <li>✓ Cancel anytime</li>
-                    </ul>
-                    <a href="https://buy.stripe.com/3cI7sN3MU6my1cQdsU4AU03" class="select-button">Select Plan</a>
-                </div>
-            </div>
-            <p style="margin-top: 25px; color: #333; font-size: 1.05em;">All payments are securely processed through Stripe.</p>
-            <p style="margin-top: 25px; color: #333; font-size: 1.05em;">You will receive Message Notification in example after payment automatically.</p>
-        </div>
-
-        <div class="content-section">
-            <h2>Contact</h2>
-            <p style="margin-bottom: 20px; color: #333; font-size: 1.05em;">Feel free to contact me if you're interested or have any problem.</p>
-            <div class="info-grid">
-                <div class="info-item">
-                    <span class="info-label">Name:</span>
-                    <span class="info-value">Benson</span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Email:</span>
-                    <span class="info-value">
-                        <a href="mailto:zphu1024@gmail.com" class="contact-link">zphu1024@gmail.com</a>
-                    </span>
-                </div>
-                <div class="info-item">
-                    <span class="info-label">Phone:</span>
-                    <span class="info-value">
-                        <a href="tel:+16137976457" class="contact-link">+1 (613) 797-6457</a>
-                    </span>
-                </div>
             </div>
         </div>
     </div>
