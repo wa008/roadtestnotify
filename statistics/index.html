@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Release Statistics - Road Test Notify</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 40px 20px 20px 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            color: #0066cc;
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .content-section {
+            background-color: #ffffff;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #0066cc;
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .intro-text {
+            color: #333;
+            font-size: 1.05em;
+            margin-bottom: 15px;
+        }
+
+        .chart-container {
+            position: relative;
+            height: 400px;
+            margin-top: 30px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05em;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+
+            .chart-container {
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.6em;
+            }
+
+            header {
+                padding: 30px 15px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Release Statistics</h1>
+    </header>
+
+    <div class="container">
+        <div class="content-section">
+            <p class="intro-text">When are driver road test appointments typically released?</p>
+            <p class="intro-text">This chart shows the count distribution of release time grouped by hour.</p>
+            
+            <div class="chart-container">
+                <canvas id="releaseChart"></canvas>
+            </div>
+
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 roadtestnotify.ca - Road Test Slot Notification Service for Ontario</p>
+    </footer>
+
+    <script>
+        // Fetch and parse the statistics data
+        async function loadStatistics() {
+            try {
+                const response = await fetch('statistics_data/statistics_logs_by_hour.txt');
+                const text = await response.text();
+                
+                // Parse the data
+                const lines = text.trim().split('\n');
+                const hours = [];
+                const counts = [];
+                
+                lines.forEach(line => {
+                    const [hour, count] = line.split('\t');
+                    hours.push(hour.padStart(2, '0') + ':00');
+                    counts.push(parseInt(count));
+                });
+                
+                // Create the chart
+                const ctx = document.getElementById('releaseChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: hours,
+                        datasets: [{
+                            label: 'Number of Releases',
+                            data: counts,
+                            borderColor: '#0066cc',
+                            backgroundColor: 'rgba(0, 102, 204, 0.1)',
+                            borderWidth: 3,
+                            fill: true,
+                            tension: 0.3,
+                            pointRadius: 4,
+                            pointBackgroundColor: '#0066cc',
+                            pointBorderColor: '#ffffff',
+                            pointBorderWidth: 2,
+                            pointHoverRadius: 6
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                display: true,
+                                position: 'top',
+                                labels: {
+                                    font: {
+                                        family: "'Open Sans', Arial, sans-serif",
+                                        size: 14,
+                                        weight: 600
+                                    },
+                                    color: '#333'
+                                }
+                            },
+                            tooltip: {
+                                backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                                titleFont: {
+                                    family: "'Open Sans', Arial, sans-serif",
+                                    size: 14
+                                },
+                                bodyFont: {
+                                    family: "'Open Sans', Arial, sans-serif",
+                                    size: 13
+                                },
+                                padding: 12,
+                                displayColors: false,
+                                callbacks: {
+                                    label: function(context) {
+                                        return 'Releases: ' + context.parsed.y;
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Hour of Day',
+                                    font: {
+                                        family: "'Open Sans', Arial, sans-serif",
+                                        size: 14,
+                                        weight: 600
+                                    },
+                                    color: '#333'
+                                },
+                                grid: {
+                                    display: false
+                                },
+                                ticks: {
+                                    font: {
+                                        family: "'Open Sans', Arial, sans-serif",
+                                        size: 12
+                                    },
+                                    color: '#666'
+                                }
+                            },
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Number of Releases',
+                                    font: {
+                                        family: "'Open Sans', Arial, sans-serif",
+                                        size: 14,
+                                        weight: 600
+                                    },
+                                    color: '#333'
+                                },
+                                grid: {
+                                    color: 'rgba(0, 0, 0, 0.05)'
+                                },
+                                ticks: {
+                                    font: {
+                                        family: "'Open Sans', Arial, sans-serif",
+                                        size: 12
+                                    },
+                                    color: '#666',
+                                    stepSize: 1
+                                }
+                            }
+                        }
+                    }
+                });
+            } catch (error) {
+                console.error('Error loading statistics:', error);
+                document.querySelector('.chart-container').innerHTML = 
+                    '<p style="text-align: center; color: #666; padding: 50px;">Unable to load statistics data. Please make sure the statistics_logs_by_hour.txt file is in the correct location.</p>';
+            }
+        }
+
+        // Load statistics when page loads
+        window.addEventListener('load', loadStatistics);
+    </script>
+</body>
+</html>
