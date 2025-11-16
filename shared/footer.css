@@ -1,0 +1,19 @@
+/* Common Footer Styles */
+.site-footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: #666;
+    font-size: 0.9em;
+    background-color: transparent;
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+@media (max-width: 480px) {
+    .site-footer {
+        padding: 20px 15px;
+        font-size: 0.85em;
+    }
+}

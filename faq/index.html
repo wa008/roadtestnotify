@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Road Test Notify</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../shared/topbar.css">
+    <link rel="stylesheet" href="../shared/footer.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding-top: 60px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 40px 20px 20px 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            color: #0066cc;
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .tagline {
+            color: #666;
+            font-size: 1.1em;
+            font-weight: 400;
+        }
+
+        .content-section {
+            background-color: #ffffff;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .faq-item {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .faq-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .faq-question {
+            color: #333;
+            font-size: 1.05em;
+            font-weight: 400;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .faq-question .question-label {
+            font-weight: 600;
+            margin-right: 8px;
+        }
+
+        .faq-answer {
+            color: #333;
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+
+        .faq-answer .answer-label {
+            font-weight: 600;
+            margin-right: 8px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .tagline {
+                font-size: 1em;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+
+            .faq-question {
+                font-size: 1em;
+            }
+
+            .faq-answer {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.6em;
+            }
+
+            header {
+                padding: 30px 15px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            .faq-question {
+                font-size: 0.95em;
+            }
+
+            .faq-answer {
+                font-size: 0.95em;
+            }
+
+            .faq-item {
+                margin-bottom: 25px;
+                padding-bottom: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed Top Navigation Bar -->
+    <nav id="topbar" class="topbar">
+        <div class="topbar-container">
+            <a href="/" class="topbar-brand">Road Test Notify</a>
+            
+            <button class="topbar-toggle" id="topbarToggle" aria-label="Toggle navigation">
+                <span class="hamburger-icon">☰</span>
+            </button>
+            
+            <ul class="topbar-menu" id="topbarMenu">
+                <li class="topbar-item">
+                    <a href="/" class="topbar-link" data-page="home">Home</a>
+                </li>
+                <li class="topbar-item">
+                    <a href="/statistics" class="topbar-link" data-page="statistics">Release Statistics</a>
+                </li>
+                <li class="topbar-item">
+                    <a href="/faq" class="topbar-link" data-page="faq">FAQ</a>
+                </li>
+                <!-- Add more navigation items here as needed -->
+            </ul>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Frequently Asked Questions</h1>
+        <p class="tagline">Find answers to common questions about our service</p>
+    </header>
+
+    <div class="container">
+        <div class="content-section">
+            <div class="faq-item">
+                <div class="faq-question"><span class="question-label">Q1:</span>How to choose my test types and locations?</div>
+                <div class="faq-answer"><span class="answer-label">A1:</span>You can choose that in payment page</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question"><span class="question-label">Q2:</span>When I can receive the notification?</div>
+                <div class="faq-answer"><span class="answer-label">A2:</span>You can receive notification no more than 20 minutes after a new recent slot release generally.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Common Footer -->
+    <footer class="site-footer">
+        <p>&copy; 2025 roadtestnotify.ca - Road Test Slot Notification Service for Ontario</p>
+    </footer>
+
+    <script src="../shared/topbar.js"></script>
+</body>
+</html>

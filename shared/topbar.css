@@ -1,0 +1,144 @@
+/* Fixed Top Navigation Bar Styles */
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #0066cc;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    height: 60px;
+}
+
+.topbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.topbar-brand {
+    color: white;
+    font-size: 1.4em;
+    font-weight: 700;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.topbar-brand:hover {
+    opacity: 0.9;
+}
+
+.topbar-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+}
+
+.topbar-item {
+    margin: 0;
+}
+
+.topbar-link {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 20px 25px;
+    font-weight: 600;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+    height: 60px;
+    line-height: 20px;
+}
+
+.topbar-link:hover {
+    background-color: #0052a3;
+}
+
+.topbar-link.active {
+    background-color: #004080;
+    border-bottom: 3px solid white;
+}
+
+/* Mobile Menu Toggle Button */
+.topbar-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8em;
+    cursor: pointer;
+    padding: 8px 12px;
+    transition: opacity 0.3s ease;
+}
+
+.topbar-toggle:hover {
+    opacity: 0.8;
+}
+
+.hamburger-icon {
+    display: block;
+    line-height: 1;
+}
+
+/* Body padding to accommodate fixed topbar */
+body.has-topbar {
+    padding-top: 60px;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .topbar-toggle {
+        display: block;
+    }
+
+    .topbar-menu {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: #0066cc;
+        flex-direction: column;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .topbar-menu.active {
+        max-height: 500px;
+    }
+
+    .topbar-link {
+        padding: 16px 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        height: auto;
+    }
+
+    .topbar-link.active {
+        border-bottom: none;
+        border-left: 4px solid white;
+    }
+
+    .topbar-brand {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .topbar-brand {
+        font-size: 1.1em;
+    }
+
+    .topbar-container {
+        padding: 0 15px;
+    }
+}
