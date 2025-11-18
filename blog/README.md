@@ -41,6 +41,7 @@ Open `blog/blog-config.js` and add your new post to the `blogPosts` array:
 
 ```javascript
 const blogPosts = [
+    // ADD NEW POSTS HERE AT THE TOP (latest first)
     {
         id: 'your-new-post',           // Must match filename without .md
         title: 'Your Post Title',      // Display title
@@ -48,11 +49,11 @@ const blogPosts = [
         excerpt: 'Brief description',  // Short summary for blog list
         author: 'Your Name'            // Author name
     },
-    // ... other posts
+    // ... older posts below
 ];
 ```
 
-**Important**: Add new posts at the TOP of the array to show them first.
+**Important**: Always add new posts at the TOP of the array. The first post in the array appears first on the blog page.
 
 ### Step 4: Test
 1. Open `http://localhost:8000/blog` to see your post in the list

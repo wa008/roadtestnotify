@@ -177,7 +177,9 @@
                 const postEl = document.createElement('div');
                 postEl.className = 'blog-card';
                 
-                const date = new Date(post.date);
+                // Parse date without timezone conversion
+                const [year, month, day] = post.date.split('-');
+                const date = new Date(year, month - 1, day);
                 const formattedDate = date.toLocaleDateString('en-US', { 
                     year: 'numeric', 
                     month: 'long', 

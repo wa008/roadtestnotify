@@ -232,7 +232,9 @@
             document.getElementById('pageTitle').textContent = postMeta.title + ' - Road Test Notify';
             document.getElementById('postTitle').textContent = postMeta.title;
             
-            const date = new Date(postMeta.date);
+            // Parse date without timezone conversion
+            const [year, month, day] = postMeta.date.split('-');
+            const date = new Date(year, month - 1, day);
             const formattedDate = date.toLocaleDateString('en-US', { 
                 year: 'numeric', 
                 month: 'long', 
@@ -247,7 +249,11 @@
                     throw new Error('Failed to load blog post');
                 }
                 
-                const markdown = await response.text();
+                let markdown = await response.text();
+                
+                // Remove the first H1 heading if it exists (since we show title separately)
+                markdown = markdown.replace(/^#\s+.+$/m, '').trim();
+                
                 const htmlContent = marked.parse(markdown);
                 document.getElementById('postContent').innerHTML = htmlContent;
             } catch (error) {
