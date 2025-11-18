@@ -187,10 +187,10 @@
                 });
 
                 postEl.innerHTML = `
-                    <h2 class="blog-title"><a href="post.html?id=${post.id}">${post.title}</a></h2>
+                    <h2 class="blog-title"><a href="/blog/post.html?id=${post.id}">${post.title}</a></h2>
                     <div class="blog-meta">By ${post.author} • ${formattedDate}</div>
                     <p class="blog-excerpt">${post.excerpt}</p>
-                    <a href="post.html?id=${post.id}" class="read-more">Read more →</a>
+                    <a href="/blog/post.html?id=${post.id}" class="read-more">Read more →</a>
                 `;
                 
                 blogListEl.appendChild(postEl);
