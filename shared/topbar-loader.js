@@ -11,7 +11,9 @@
         if (currentPath.includes('/statistics/') || 
             currentPath.includes('/faq/') || 
             currentPath.includes('/contact/') || 
-            currentPath.includes('/subscribe/')) {
+            currentPath.includes('/subscribe/') ||
+            currentPath.includes('/blog/') ||
+            currentPath.includes('/scope/')) {
             sharedPath = '../shared/';
         }
 

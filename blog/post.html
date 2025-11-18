@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Blog Post - Road Test Notify</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../shared/topbar.css">
+    <link rel="stylesheet" href="../shared/footer.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding-top: 60px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .blog-post {
+            background-color: #ffffff;
+            padding: 40px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .post-title {
+            color: #0066cc;
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .post-meta {
+            color: #666;
+            font-size: 1em;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .post-content {
+            color: #333;
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        .post-content h1,
+        .post-content h2,
+        .post-content h3 {
+            color: #0066cc;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .post-content h1 {
+            font-size: 1.6em;
+        }
+
+        .post-content h2 {
+            font-size: 1.4em;
+        }
+
+        .post-content h3 {
+            font-size: 1.2em;
+        }
+
+        .post-content p {
+            margin-bottom: 20px;
+        }
+
+        .post-content ul,
+        .post-content ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        .post-content li {
+            margin-bottom: 10px;
+        }
+
+        .post-content a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .post-content a:hover {
+            text-decoration: underline;
+        }
+
+        .post-content code {
+            background-color: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        .post-content pre {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin-bottom: 20px;
+        }
+
+        .post-content pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+
+        .post-content blockquote {
+            border-left: 4px solid #0066cc;
+            padding-left: 20px;
+            margin: 20px 0;
+            color: #666;
+            font-style: italic;
+        }
+
+        .post-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        @media (max-width: 768px) {
+            .blog-post {
+                padding: 25px;
+            }
+
+            .post-title {
+                font-size: 2em;
+            }
+
+            .post-content {
+                font-size: 1.05em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+            }
+
+            .blog-post {
+                padding: 20px;
+            }
+
+            .post-title {
+                font-size: 1.6em;
+            }
+
+            .post-content h1 {
+                font-size: 1.4em;
+            }
+
+            .post-content h2 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Topbar Placeholder -->
+    <div id="topbar-placeholder"></div>
+    <script src="../shared/topbar-loader.js"></script>
+
+    <div class="container">
+        <a href="/blog" class="back-link">← Back to Blog</a>
+        
+        <article class="blog-post">
+            <h1 class="post-title" id="postTitle">Loading...</h1>
+            <div class="post-meta" id="postMeta"></div>
+            <div class="post-content" id="postContent">
+                <p>Loading blog post...</p>
+            </div>
+        </article>
+    </div>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script src="../shared/footer-loader.js"></script>
+    <script src="blog-config.js"></script>
+    <script>
+        // Get post ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const postId = urlParams.get('id');
+
+        async function loadBlogPost() {
+            if (!postId) {
+                document.getElementById('postTitle').textContent = 'Post Not Found';
+                document.getElementById('postContent').innerHTML = '<p>No blog post ID specified.</p>';
+                return;
+            }
+
+            // Find post metadata from config
+            const postMeta = blogPosts.find(post => post.id === postId);
+            
+            if (!postMeta) {
+                document.getElementById('postTitle').textContent = 'Post Not Found';
+                document.getElementById('postContent').innerHTML = '<p>The requested blog post could not be found.</p>';
+                return;
+            }
+
+            // Update title and meta
+            document.getElementById('pageTitle').textContent = postMeta.title + ' - Road Test Notify';
+            document.getElementById('postTitle').textContent = postMeta.title;
+            
+            const date = new Date(postMeta.date);
+            const formattedDate = date.toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+            document.getElementById('postMeta').textContent = `By ${postMeta.author} • ${formattedDate}`;
+
+            // Load and render markdown content
+            try {
+                const response = await fetch(`posts/${postId}.md`);
+                if (!response.ok) {
+                    throw new Error('Failed to load blog post');
+                }
+                
+                const markdown = await response.text();
+                const htmlContent = marked.parse(markdown);
+                document.getElementById('postContent').innerHTML = htmlContent;
+            } catch (error) {
+                console.error('Error loading blog post:', error);
+                document.getElementById('postContent').innerHTML = '<p>Error loading blog post content. Please make sure the markdown file exists.</p>';
+            }
+        }
+
+        window.addEventListener('load', loadBlogPost);
+    </script>
+</body>
+</html>

@@ -43,7 +43,7 @@ To add the topbar to any page (like FAQ or Statistics pages), follow these 3 sim
                     <a href="https://www.roadtestnotify.ca/" class="topbar-link" data-page="home">Home</a>
                 </li>
                 <li class="topbar-item">
-                    <a href="https://www.roadtestnotify.ca/statistics" class="topbar-link" data-page="statistics">Release Statistics</a>
+                    <a href="https://www.roadtestnotify.ca/statistics" class="topbar-link" data-page="statistics">Cancellation Trends</a>
                 </li>
                 <li class="topbar-item">
                     <a href="https://www.roadtestnotify.ca/faq" class="topbar-link" data-page="faq">FAQ</a>
@@ -95,7 +95,7 @@ To add a new button to the navigation bar, simply add a new `<li>` item inside t
         <a href="https://www.roadtestnotify.ca/" class="topbar-link" data-page="home">Home</a>
     </li>
     <li class="topbar-item">
-        <a href="https://www.roadtestnotify.ca/statistics" class="topbar-link" data-page="statistics">Release Statistics</a>
+        <a href="https://www.roadtestnotify.ca/statistics" class="topbar-link" data-page="statistics">Cancellation Trends</a>
     </li>
     <li class="topbar-item">
         <a href="https://www.roadtestnotify.ca/faq" class="topbar-link" data-page="faq">FAQ</a>

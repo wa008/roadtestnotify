@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ - Road Test Notify</title>
+    <title>Service Scope - Road Test Notify</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../shared/topbar.css">
     <link rel="stylesheet" href="../shared/footer.css">
@@ -56,36 +56,41 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
-        .faq-item {
-            margin-bottom: 30px;
-            padding-bottom: 30px;
-            border-bottom: 2px solid #f0f0f0;
-        }
-
-        .faq-item:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
-        }
-
-        .faq-question {
-            color: #333;
-            font-size: 1.05em;
-            font-weight: 400;
-            margin-bottom: 15px;
-            line-height: 1.8;
-        }
-
-        .faq-question .question-label {
+        h2 {
+            color: #0066cc;
+            font-size: 1.5em;
             font-weight: 600;
-            margin-right: 8px;
+            margin-bottom: 20px;
         }
 
-        .faq-answer {
+        h3 {
+            color: #333;
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .scope-list {
+            list-style-type: disc;
+            margin-left: 30px;
             color: #333;
             font-size: 1.05em;
-            line-height: 1.8;
-            padding-left: 28px;
+        }
+
+        .scope-list li {
+            margin-bottom: 8px;
+        }
+
+        .scope-section {
+            margin-top: 15px;
+        }
+
+        .scope-category {
+            margin-bottom: 25px;
+        }
+
+        .scope-category:last-child {
+            margin-bottom: 0;
         }
 
         @media (max-width: 768px) {
@@ -99,14 +104,6 @@
 
             .content-section {
                 padding: 20px;
-            }
-
-            .faq-question {
-                font-size: 1em;
-            }
-
-            .faq-answer {
-                font-size: 1em;
             }
         }
 
@@ -122,19 +119,6 @@
             .container {
                 padding: 15px;
             }
-
-            .faq-question {
-                font-size: 0.95em;
-            }
-
-            .faq-answer {
-                font-size: 0.95em;
-            }
-
-            .faq-item {
-                margin-bottom: 25px;
-                padding-bottom: 25px;
-            }
         }
     </style>
 </head>
@@ -144,26 +128,44 @@
     <script src="../shared/topbar-loader.js"></script>
 
     <header>
-        <h1>Frequently Asked Questions</h1>
-        <p class="tagline">Find answers to common questions about our service</p>
+        <h1>Service Scope</h1>
+        <p class="tagline">Coverage details for our road test notification service</p>
     </header>
 
     <div class="container">
         <div class="content-section">
-
-            <div class="faq-item">
-                <div class="faq-question"><span class="question-label">Q1:</span>How I can use the service?</div>
-                <div class="faq-answer">After you <a href="/subscribe" style="color: #0066cc; text-decoration: none;">subscribe</a> current service, you will get SMS notification like <a href="/" style="color: #0066cc; text-decoration: none;">example in main page</a> as soon as a new recent road test slot released, you don't have to refresh the drivetest website again and again. What you need to do is book road test since you receive the SMS notification.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question"><span class="question-label">Q2:</span>How to choose my test types and locations?</div>
-                <div class="faq-answer">You can choose that in <a href="/subscribe" style="color: #0066cc; text-decoration: none; font-weight: 600;">payment page</a> after choosing the plan.</div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question"><span class="question-label">Q3:</span>When I can receive the notification?</div>
-                <div class="faq-answer">You can receive notification no more than 20 minutes after a new recent slot release generally.</div>
+            <h2>Coverage Details</h2>
+            <div class="scope-section">
+                <div class="scope-category">
+                    <h3>Test Types:</h3>
+                    <ul class="scope-list">
+                        <li>G</li>
+                        <li>G2</li>
+                    </ul>
+                </div>
+                
+                <div class="scope-category">
+                    <h3>Locations:</h3>
+                    <ul class="scope-list">
+                        <li>Toronto Downsview</li>
+                        <li>Toronto Etobicoke</li>
+                        <li>Toronto Metro East</li>
+                        <li>Toronto Port Union</li>
+                        <li>Ottawa Walkley</li>
+                        <li>Ottawa Canotek</li>
+                        <li>Brampton</li>
+                        <li>Mississauga</li>
+                        <li>Oakville</li>
+                        <li>Hamilton</li>
+                        <li>London</li>
+                        <li>Kitchener</li>
+                        <li>Windsor</li>
+                        <li>Burlington</li>
+                        <li>Oshawa</li>
+                        <li>Newmarket</li>
+                    </ul>
+                </div>
+                <p style="margin-top: 25px; color: #333; font-size: 1.05em;"><a href="/contact" style="color: #0066cc; text-decoration: none;">Contact</a> me if your location isn't on the list.</p>
             </div>
         </div>
     </div>
