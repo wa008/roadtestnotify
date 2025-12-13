@@ -1,4 +1,156 @@
+# robots.txt for roadtestnotify.ca
+# Last updated: December 2025
+
+# Default rule - allow all crawlers
 User-agent: *
 Allow: /
 
+# ===========================================
+# Search Engine Crawlers - All Allowed
+# ===========================================
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
+
+# Bing / Microsoft
+User-agent: Bingbot
+Allow: /
+
+User-agent: msnbot
+Allow: /
+
+# Yahoo
+User-agent: Slurp
+Allow: /
+
+# Baidu (China)
+User-agent: Baiduspider
+Allow: /
+
+# Yandex (Russia)
+User-agent: Yandex
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+
+# Apple
+User-agent: Applebot
+Allow: /
+
+# Sogou (China)
+User-agent: Sogou
+Allow: /
+
+# Naver (Korea)
+User-agent: Yeti
+Allow: /
+
+# ===========================================
+# LLM / AI Crawlers - All Allowed
+# ===========================================
+
+# OpenAI (ChatGPT)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic (Claude)
+User-agent: Claude-Web
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Google AI (Gemini/Bard)
+User-agent: Google-Extended
+Allow: /
+
+# Microsoft Copilot
+User-agent: Copilot
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+
+# Amazon / Alexa
+User-agent: Amazonbot
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+
+# Common Crawl (used by many AI models)
+User-agent: CCBot
+Allow: /
+
+# You.com AI
+User-agent: YouBot
+Allow: /
+
+# Neeva AI
+User-agent: NeevaBot
+Allow: /
+
+# ===========================================
+# Other Allowed Crawlers
+# ===========================================
+
+# Internet Archive
+User-agent: ia_archiver
+Allow: /
+
+# Ahrefs SEO
+User-agent: AhrefsBot
+Allow: /
+
+# SEMrush
+User-agent: SemrushBot
+Allow: /
+
+# Moz
+User-agent: MJ12bot
+Allow: /
+
+User-agent: DotBot
+Allow: /
+
+# ===========================================
+# Sitemap Location
+# ===========================================
 Sitemap: https://www.roadtestnotify.ca/sitemap.xml
