@@ -1,11 +1,26 @@
 {
+  "redirects": [
+    {
+      "source": "/blog/:slug([a-z0-9-]+)/",
+      "destination": "/blog/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/blog/post.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "id",
+          "value": "(?<slug>[a-z0-9-]+)"
+        }
+      ],
+      "destination": "/blog/:slug",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/blog/:slug([a-z0-9-]+)",
-      "destination": "/blog/post.html?id=:slug"
-    },
-    {
-      "source": "/blog/:slug([a-z0-9-]+)/",
       "destination": "/blog/post.html?id=:slug"
     }
   ]

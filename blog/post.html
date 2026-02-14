@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="pageTitle">Blog Post - Road Test Notify</title>
+    <link rel="canonical" id="canonicalLink" href="https://www.roadtestnotify.ca/blog">
+    <meta property="og:type" content="article">
+    <meta property="og:url" id="ogUrl" content="https://www.roadtestnotify.ca/blog">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../shared/topbar.css">
     <link rel="stylesheet" href="../shared/footer.css">
@@ -206,8 +209,18 @@
     <div id="footer-placeholder"></div>
 
     <script src="../shared/footer-loader.js"></script>
-    <script src="blog-config.js"></script>
+    <script src="/blog/blog-config.js"></script>
     <script>
+        function getCleanPostPath(id) {
+            return `/blog/${encodeURIComponent(id)}`;
+        }
+
+        function setCanonicalAndOgUrl(id) {
+            const canonicalUrl = `https://www.roadtestnotify.ca${getCleanPostPath(id)}`;
+            document.getElementById('canonicalLink').setAttribute('href', canonicalUrl);
+            document.getElementById('ogUrl').setAttribute('content', canonicalUrl);
+        }
+
         function getPostIdFromUrl() {
             // Legacy format: /blog/post.html?id=post-id
             const urlParams = new URLSearchParams(window.location.search);
@@ -247,6 +260,8 @@
                 return;
             }
 
+            setCanonicalAndOgUrl(postId);
+
             // Update title and meta
             document.getElementById('pageTitle').textContent = postMeta.title + ' - Road Test Notify';
             document.getElementById('postTitle').textContent = postMeta.title;
@@ -263,7 +278,7 @@
 
             // Load and render markdown content
             try {
-                const response = await fetch(`posts/${postId}.md`);
+                const response = await fetch(`/blog/posts/${postId}.md`);
                 if (!response.ok) {
                     throw new Error('Failed to load blog post');
                 }
