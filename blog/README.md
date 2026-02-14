@@ -57,7 +57,7 @@ const blogPosts = [
 
 ### Step 4: Test
 1. Open `http://localhost:8000/blog` to see your post in the list
-2. Click on it to view the full post
+2. Click on it to view the full post (clean URL format: `/blog/your-post-id`)
 
 ## File Structure
 ```

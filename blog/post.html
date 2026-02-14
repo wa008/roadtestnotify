@@ -208,9 +208,28 @@
     <script src="../shared/footer-loader.js"></script>
     <script src="blog-config.js"></script>
     <script>
-        // Get post ID from URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const postId = urlParams.get('id');
+        function getPostIdFromUrl() {
+            // Legacy format: /blog/post.html?id=post-id
+            const urlParams = new URLSearchParams(window.location.search);
+            const legacyId = urlParams.get('id');
+            if (legacyId) {
+                return legacyId;
+            }
+
+            // Modern format: /blog/post-id (via rewrite)
+            const pathSegments = window.location.pathname.split('/').filter(Boolean);
+            if (pathSegments.length >= 2 && pathSegments[0] === 'blog') {
+                const slug = decodeURIComponent(pathSegments[1]);
+                const reservedSegments = new Set(['index.html', 'post.html', 'post']);
+                if (!reservedSegments.has(slug)) {
+                    return slug;
+                }
+            }
+
+            return null;
+        }
+
+        const postId = getPostIdFromUrl();
 
         async function loadBlogPost() {
             if (!postId) {

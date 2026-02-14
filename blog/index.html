@@ -176,6 +176,7 @@
             blogPosts.forEach(post => {
                 const postEl = document.createElement('div');
                 postEl.className = 'blog-card';
+                const postUrl = `/blog/${encodeURIComponent(post.id)}`;
                 
                 // Parse date without timezone conversion
                 const [year, month, day] = post.date.split('-');
@@ -187,10 +188,10 @@
                 });
 
                 postEl.innerHTML = `
-                    <h2 class="blog-title"><a href="/blog/post.html?id=${post.id}">${post.title}</a></h2>
+                    <h2 class="blog-title"><a href="${postUrl}">${post.title}</a></h2>
                     <div class="blog-meta">By ${post.author} • ${formattedDate}</div>
                     <p class="blog-excerpt">${post.excerpt}</p>
-                    <a href="/blog/post.html?id=${post.id}" class="read-more">Read more →</a>
+                    <a href="${postUrl}" class="read-more">Read more →</a>
                 `;
                 
                 blogListEl.appendChild(postEl);
