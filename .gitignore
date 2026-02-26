@@ -1,2 +1,6 @@
 .vercel
 .env*.local
+
+statistics_data/cron.log
+statistics_data/restart_statistics.sh
+statistics_data/statistics_logs.py
