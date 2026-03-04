@@ -50,6 +50,17 @@
             font-weight: 400;
         }
 
+        .last-updated {
+            background-color: #e8f4fd;
+            color: #0066cc;
+            font-size: 0.9em;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-left: 3px solid #0066cc;
+            border-radius: 0 6px 6px 0;
+            margin-bottom: 20px;
+        }
+
         .content-section {
             background-color: #ffffff;
             padding: 30px;
@@ -138,13 +149,12 @@
 
     <div class="container">
         <div class="content-section">
+            <p id="lastUpdated" class="last-updated"></p>
             <p class="intro-text">This chart shows the count distribution of release time grouped by hour.</p>
             
             <div class="chart-container">
                 <canvas id="releaseChart"></canvas>
             </div>
-
-            <p id="lastUpdated" style="text-align: right; color: #999; font-size: 0.85em; margin-top: 10px;"></p>
 
             <p class="intro-text" style="margin-top: 20px;">The line chart update daily, You can just check the drivetest appointment system for slot during the period that appointments are canceled the most recently.</p>
 
@@ -252,9 +262,8 @@
                         }
                     }
                 });
-                // Display the last-updated date (approximate: now minus 1 hour, day precision)
                 const updated = new Date();
-                updated.setHours(updated.getHours() - 1);
+                updated.setDate(updated.getDate() - 1);
                 document.getElementById('lastUpdated').textContent =
                     'Last updated: ' + updated.toLocaleDateString('en-US', {
                         year: 'numeric', month: 'short', day: 'numeric'
