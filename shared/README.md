@@ -32,7 +32,7 @@ To add the topbar to any page (like FAQ or Statistics pages), follow these 3 sim
     <!-- Fixed Top Navigation Bar -->
     <nav id="topbar" class="topbar">
         <div class="topbar-container">
-            <a href="https://www.roadtestnotify.ca/" class="topbar-brand">Road Test Notify</a>
+            <a href="https://www.roadtestnotify.ca/" class="topbar-brand">Road Test Notification</a>
             
             <button class="topbar-toggle" id="topbarToggle" aria-label="Toggle navigation">
                 <span class="hamburger-icon">☰</span>
@@ -157,7 +157,7 @@ body.has-topbar {
 Simply edit the text in the HTML:
 
 ```html
-<a href="https://www.roadtestnotify.ca/" class="topbar-brand">Road Test Notify</a>
+<a href="https://www.roadtestnotify.ca/" class="topbar-brand">Road Test Notification</a>
 ```
 
 ## Browser Compatibility

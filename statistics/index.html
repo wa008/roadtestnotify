@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cancellation Trends - Road Test Notify</title>
+    <title>Cancellation Trends - Road Test Notification</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../shared/topbar.css">
     <link rel="stylesheet" href="../shared/footer.css">
@@ -144,9 +144,11 @@
                 <canvas id="releaseChart"></canvas>
             </div>
 
+            <p id="lastUpdated" style="text-align: right; color: #999; font-size: 0.85em; margin-top: 10px;"></p>
+
             <p class="intro-text" style="margin-top: 20px;">The line chart update daily, You can just check the drivetest appointment system for slot during the period that appointments are canceled the most recently.</p>
 
-            <p class="intro-text" style="margin-top: 20px;">To receive instant notifications, please subscribe to my <a href="/subscribe" style="color: #0066cc; text-decoration: none;">Road Test Notify</a> Service.</p>
+            <p class="intro-text" style="margin-top: 20px;">To receive instant notifications, please subscribe to my <a href="/subscribe" style="color: #0066cc; text-decoration: none;">Road Test Notification</a> Service.</p>
 
         </div>
     </div>
@@ -250,6 +252,13 @@
                         }
                     }
                 });
+                // Display the last-updated date (approximate: now minus 1 hour, day precision)
+                const updated = new Date();
+                updated.setHours(updated.getHours() - 1);
+                document.getElementById('lastUpdated').textContent =
+                    'Last updated: ' + updated.toLocaleDateString('en-US', {
+                        year: 'numeric', month: 'short', day: 'numeric'
+                    });
             } catch (error) {
                 console.error('Error loading statistics:', error);
                 document.querySelector('.chart-container').innerHTML = 

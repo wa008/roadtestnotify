@@ -17,7 +17,7 @@ const blogPosts = [
     },
     {
         id: 'welcome-to-road-test-notify',
-        title: 'Welcome to Road Test Notify',
+        title: 'Welcome to Road Test Notification',
         date: '2025-11-17',
         excerpt: 'Learn how our service helps you book road test appointments faster by monitoring slot releases in real-time.',
         author: 'Benson'

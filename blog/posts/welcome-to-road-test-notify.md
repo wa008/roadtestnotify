@@ -1,10 +1,10 @@
-# Welcome to Road Test Notify
+# Welcome to Road Test Notification
 
 If you're reading this, you're probably in the same boat as thousands of other Ontarians trying to book a road test appointment. You check the DriveTest website daily, only to find no available slots for days or weeks ahead.
 
 ## Our Solution
 
-Road Test Notify monitors the DriveTest booking system and sends you an instant SMS notification the moment a new slot opens up at your preferred location. No more endless refreshing, no more missed opportunities.
+Road Test Notification monitors the DriveTest booking system and sends you an instant SMS notification the moment a new slot opens up at your preferred location. No more endless refreshing, no more missed opportunities.
 
 ## How It Works
 
