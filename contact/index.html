@@ -163,7 +163,7 @@
                 <div class="info-item">
                     <span class="info-label">Email:</span>
                     <span class="info-value">
-                        <a href="mailto:roadtestnotifications@gmail.com" class="contact-link">roadtestnotifications@gmail.com</a>
+                        <span class="contact-link" style="cursor: pointer;" onclick="navigator.clipboard.writeText('roadtestnotifications@gmail.com').then(() => { this.dataset.original = this.textContent; this.textContent = 'Copied!'; setTimeout(() => this.textContent = this.dataset.original, 1500); })">roadtestnotifications@gmail.com</span>
                     </span>
                 </div>
             </div>
