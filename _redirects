@@ -1,2 +1,0 @@
-# Redirect legacy Vercel query string URLs to clean URLs
-/blog/post.html?id=:slug /blog/:slug 301

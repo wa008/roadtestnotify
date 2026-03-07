@@ -4,7 +4,7 @@ const { marked } = require('marked');
 
 const DIST = 'dist';
 const IGNORE = new Set([
-    'node_modules', '.git', '.gitignore', '.vercel', '.DS_Store',
+    'node_modules', '.git', '.gitignore', '.DS_Store',
     'dist', 'build.js', 'package.json', 'package-lock.json'
 ]);
 
