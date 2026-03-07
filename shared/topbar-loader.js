@@ -3,19 +3,7 @@
     'use strict';
 
     function loadTopbar() {
-        // Determine the path to shared folder based on current location
-        const currentPath = window.location.pathname;
-        let sharedPath = 'shared/';
-
-        // If we're in a subdirectory, adjust the path
-        if (currentPath.includes('/statistics/') ||
-            currentPath.includes('/faq/') ||
-            currentPath.includes('/contact/') ||
-            currentPath.includes('/subscribe/') ||
-            currentPath.includes('/blog/') ||
-            currentPath.includes('/scope/')) {
-            sharedPath = '../shared/';
-        }
+        const sharedPath = '/shared/';
 
         // Fetch and insert the topbar HTML
         fetch(sharedPath + 'topbar.html')

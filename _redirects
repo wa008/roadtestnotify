@@ -1,5 +1,2 @@
 # Redirect legacy Vercel query string URLs to clean URLs
 /blog/post.html?id=:slug /blog/:slug 301
-
-# Rewrite /blog/:slug to post.html for client-side rendering
-/blog/:slug /blog/post.html 200

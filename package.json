@@ -1,0 +1,10 @@
+{
+  "name": "roadtestnotify",
+  "private": true,
+  "scripts": {
+    "build": "node build.js"
+  },
+  "devDependencies": {
+    "marked": "^15.0.0"
+  }
+}

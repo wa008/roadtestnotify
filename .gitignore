@@ -1,5 +1,7 @@
 .vercel
 .env*.local
+dist/
+node_modules/
 
 statistics_data/cron.log
 statistics_data/restart_statistics.sh
