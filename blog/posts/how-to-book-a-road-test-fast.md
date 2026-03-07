@@ -1,3 +1,10 @@
+---
+title: "How to book a road test fast in Ontario?"
+date: "2025-11-18"
+excerpt: "Help you to understant driver road test booking system and book a road test fast"
+author: "Benson"
+---
+
 # How to book a road test fast in Ontario?
 
 You get three chances to reschedule your road test within a six-month window. This means you should always book the earliest available date right away.

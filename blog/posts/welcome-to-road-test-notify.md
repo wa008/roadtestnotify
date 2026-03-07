@@ -1,3 +1,10 @@
+---
+title: "Welcome to Road Test Notification"
+date: "2025-11-17"
+excerpt: "Learn how our service helps you book road test appointments faster by monitoring slot releases in real-time."
+author: "Benson"
+---
+
 # Welcome to Road Test Notification
 
 If you're reading this, you're probably in the same boat as thousands of other Ontarians trying to book a road test appointment. You check the DriveTest website daily, only to find no available slots for days or weeks ahead.
