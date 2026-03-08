@@ -57,7 +57,7 @@
                         (dataPage === 'scope' && currentPath.includes('/scope')) ||
                         (dataPage === 'subscribe' && currentPath.includes('/subscribe')) ||
                         (dataPage === 'statistics' && currentPath.includes('/statistics')) ||
-                        (dataPage === 'ratings' && currentPath.includes('/ratings')) ||
+                        (dataPage === 'pass-rates' && currentPath.includes('/pass-rates')) ||
                         (dataPage === 'blog' && currentPath.includes('/blog')) ||
                         (dataPage === 'faq' && currentPath.includes('/faq')) ||
                         (dataPage === 'contact' && currentPath.includes('/contact'))) {

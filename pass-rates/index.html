@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ratings - Road Test Notification</title>
+    <title>Pass Rates - Road Test Notification</title>
     <meta name="description" content="Compare G and G2 pass rates across Ontario road test centres.">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.roadtestnotify.ca/ratings">
+    <link rel="canonical" href="https://www.roadtestnotify.ca/pass-rates">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -264,7 +264,7 @@
     <script src="../shared/topbar-loader.js"></script>
 
     <header>
-        <h1>Ratings</h1>
+        <h1>Pass Rates</h1>
         <p class="tagline">Compare G and G2 pass rates across Ontario test centres</p>
     </header>
 
@@ -288,7 +288,7 @@
                             <th scope="col">Google Maps</th>
                         </tr>
                     </thead>
-                    <tbody id="ratingsTableBody"></tbody>
+                    <tbody id="passRatesTableBody"></tbody>
                 </table>
             </div>
         </div>
@@ -310,7 +310,7 @@
 
         async function loadPassRates() {
             const statusText = document.getElementById('statusText');
-            const tableBody = document.getElementById('ratingsTableBody');
+            const tableBody = document.getElementById('passRatesTableBody');
             const regionFilters = document.getElementById('regionFilters');
             const toggleFiltersButton = document.getElementById('toggleFiltersButton');
 
@@ -384,7 +384,7 @@
 
         function renderTable() {
             const statusText = document.getElementById('statusText');
-            const tableBody = document.getElementById('ratingsTableBody');
+            const tableBody = document.getElementById('passRatesTableBody');
             const selectedRegions = new Set(
                 [...document.querySelectorAll('#regionFilters input[type="checkbox"]:checked')]
                     .map(input => input.value)
