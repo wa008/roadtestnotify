@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ratings - Road Test Notification</title>
+    <meta name="description" content="Compare G and G2 pass rates across Ontario road test centres.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.roadtestnotify.ca/ratings">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="theme-color" content="#0066cc">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../shared/topbar.css">
+    <link rel="stylesheet" href="../shared/footer.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding-top: 60px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 40px 20px 20px 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            color: #0066cc;
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .tagline {
+            color: #666;
+            font-size: 1.1em;
+            font-weight: 400;
+        }
+
+        .content-section {
+            background-color: #ffffff;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0066cc;
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .intro-text {
+            color: #333;
+            font-size: 1.05em;
+            margin-bottom: 15px;
+        }
+
+        .filters-panel {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f8fbff;
+            border: 1px solid #e5eef8;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .filter-action {
+            border: none;
+            background: none;
+            color: #0066cc;
+            font-size: 0.95em;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 0;
+            font-family: 'Open Sans', Arial, sans-serif;
+            white-space: nowrap;
+            margin-left: auto;
+        }
+
+        .filter-action:hover {
+            text-decoration: underline;
+        }
+
+        .filter-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 18px;
+            flex: 1 1 720px;
+        }
+
+        .filter-option {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #333;
+            font-size: 0.98em;
+            cursor: pointer;
+        }
+
+        .filter-option input {
+            width: 16px;
+            height: 16px;
+            accent-color: #0066cc;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            margin-top: 20px;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 520px;
+        }
+
+        thead {
+            background-color: #f8fbff;
+        }
+
+        th,
+        td {
+            padding: 14px 18px;
+            text-align: left;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        th {
+            color: #0066cc;
+            font-size: 0.95em;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+
+        td {
+            color: #333;
+            font-size: 1em;
+        }
+
+        td.rate-cell {
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .maps-link {
+            color: #0066cc;
+            font-weight: 600;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .maps-link:hover {
+            text-decoration: underline;
+        }
+
+        .maps-unavailable {
+            color: #999;
+            white-space: nowrap;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #fcfcfc;
+        }
+
+        .status-text {
+            color: #666;
+            font-size: 0.98em;
+        }
+
+        .status-text:empty {
+            display: none;
+        }
+
+        .error-text {
+            color: #b42318;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .tagline {
+                font-size: 1em;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+
+            .filters-panel {
+                align-items: flex-start;
+            }
+
+            th,
+            td {
+                padding: 12px 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.6em;
+            }
+
+            header {
+                padding: 30px 15px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            .intro-text,
+            .status-text {
+                font-size: 0.95em;
+            }
+
+            .filter-action {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Topbar Placeholder -->
+    <div id="topbar-placeholder"></div>
+    <script src="../shared/topbar-loader.js"></script>
+
+    <header>
+        <h1>Ratings</h1>
+        <p class="tagline">Compare G and G2 pass rates across Ontario test centres</p>
+    </header>
+
+    <div class="container">
+        <div class="content-section">
+            <h2>Pass Rates</h2>
+            <p class="intro-text">Browse pass rates by test centre to compare G and G2 performance at a glance.</p>
+            <div class="filters-panel">
+                <div id="regionFilters" class="filter-list"></div>
+                <button type="button" id="toggleFiltersButton" class="filter-action">Remove all</button>
+            </div>
+            <p id="statusText" class="status-text">Loading pass rate data...</p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Test Centre</th>
+                            <th scope="col">G Pass Rate</th>
+                            <th scope="col">G2 Pass Rate</th>
+                            <th scope="col">Google Maps</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ratingsTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script src="../shared/footer-loader.js"></script>
+    <script>
+        let allRows = [];
+        const REGION_ORDER = [
+            'GTA',
+            'Southwestern Ontario',
+            'Eastern Ontario',
+            'Central Ontario',
+            'Northern Ontario'
+        ];
+
+        async function loadPassRates() {
+            const statusText = document.getElementById('statusText');
+            const tableBody = document.getElementById('ratingsTableBody');
+            const regionFilters = document.getElementById('regionFilters');
+            const toggleFiltersButton = document.getElementById('toggleFiltersButton');
+
+            try {
+                const response = await fetch('../data/pass_rate_report.txt');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch pass rate data.');
+                }
+
+                const text = await response.text();
+                const rows = text
+                    .trim()
+                    .split('\n')
+                    .map(line => line.trim())
+                    .filter(Boolean)
+                    .map(line => {
+                        const [centre, region, gRate, g2Rate, address] = line.split('\t');
+                        return { centre, region, gRate, g2Rate, address };
+                    })
+                    .filter(row => row.centre && row.region && row.gRate && row.g2Rate && row.address);
+
+                allRows = rows;
+                const regions = [...new Set(rows.map(row => row.region))].sort((a, b) => {
+                    const aIndex = REGION_ORDER.indexOf(a);
+                    const bIndex = REGION_ORDER.indexOf(b);
+                    const normalizedAIndex = aIndex === -1 ? Number.MAX_SAFE_INTEGER : aIndex;
+                    const normalizedBIndex = bIndex === -1 ? Number.MAX_SAFE_INTEGER : bIndex;
+
+                    if (normalizedAIndex !== normalizedBIndex) {
+                        return normalizedAIndex - normalizedBIndex;
+                    }
+
+                    return a.localeCompare(b);
+                });
+
+                regionFilters.innerHTML = regions.map(region => `
+                    <label class="filter-option">
+                        <input type="checkbox" value="${escapeHtml(region)}" checked>
+                        <span>${escapeHtml(region)}</span>
+                    </label>
+                `).join('');
+
+                regionFilters.querySelectorAll('input[type="checkbox"]').forEach(input => {
+                    input.addEventListener('change', () => {
+                        updateFilterActionLabel();
+                        renderTable();
+                    });
+                });
+
+                toggleFiltersButton.addEventListener('click', () => {
+                    const inputs = regionFilters.querySelectorAll('input[type="checkbox"]');
+                    const allSelected = [...inputs].every(input => input.checked);
+
+                    inputs.forEach(input => {
+                        input.checked = !allSelected;
+                    });
+
+                    updateFilterActionLabel();
+                    renderTable();
+                });
+
+                updateFilterActionLabel();
+                renderTable();
+            } catch (error) {
+                tableBody.innerHTML = '';
+                statusText.textContent = 'Unable to load pass rate data right now.';
+                statusText.classList.add('error-text');
+                console.error(error);
+            }
+        }
+
+        function renderTable() {
+            const statusText = document.getElementById('statusText');
+            const tableBody = document.getElementById('ratingsTableBody');
+            const selectedRegions = new Set(
+                [...document.querySelectorAll('#regionFilters input[type="checkbox"]:checked')]
+                    .map(input => input.value)
+            );
+
+            const visibleRows = allRows.filter(row => selectedRegions.has(row.region));
+
+            tableBody.innerHTML = visibleRows.map(row => `
+                <tr>
+                    <td>${escapeHtml(row.centre)}</td>
+                    <td class="rate-cell">${escapeHtml(row.gRate)}</td>
+                    <td class="rate-cell">${escapeHtml(row.g2Rate)}</td>
+                    <td>${renderMapsCell(row.address)}</td>
+                </tr>
+            `).join('');
+
+            statusText.classList.remove('error-text');
+            statusText.textContent = visibleRows.length === 0
+                ? 'No test centres match the selected regions.'
+                : '';
+        }
+
+        function updateFilterActionLabel() {
+            const toggleFiltersButton = document.getElementById('toggleFiltersButton');
+            const inputs = [...document.querySelectorAll('#regionFilters input[type="checkbox"]')];
+            const allSelected = inputs.length > 0 && inputs.every(input => input.checked);
+
+            toggleFiltersButton.textContent = allSelected ? 'Remove all' : 'Select all';
+        }
+
+        function getGoogleMapsUrl(address) {
+            return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+        }
+
+        function renderMapsCell(address) {
+            if (!address || address === '-') {
+                return '<span class="maps-unavailable">Unavailable</span>';
+            }
+
+            return `<a class="maps-link" href="${getGoogleMapsUrl(address)}" target="_blank" rel="noopener noreferrer">View</a>`;
+        }
+
+        function escapeHtml(value) {
+            return String(value)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        loadPassRates();
+    </script>
+</body>
+
+</html>
