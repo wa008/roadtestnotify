@@ -1,7 +1,7 @@
 ---
 title: "How to book a road test fast in Ontario?"
 date: "2025-11-18"
-excerpt: "Help you to understant driver road test booking system and book a road test fast"
+excerpt: "Understand the Ontario DriveTest booking system and book a road test faster."
 author: "Benson"
 ---
 

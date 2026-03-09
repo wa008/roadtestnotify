@@ -99,27 +99,50 @@ for (const post of blogPosts) {
     const htmlContent = marked.parse(post.body);
     const canonicalUrl = `https://www.roadtestnotify.ca/blog/${encodeURIComponent(post.id)}`;
     const formattedDate = formatDate(post.date);
+    const escapedTitle = escapeHtml(post.title);
+    const escapedExcerpt = escapeHtml(post.excerpt || `Read ${post.title} on Road Test Notification.`);
+    const escapedAuthor = escapeHtml(post.author);
 
     const page = template
         .replace(
             /<title id="pageTitle">.*?<\/title>/,
-            `<title>${post.title} - Road Test Notification</title>`
+            `<title>${escapedTitle} - Road Test Notification</title>`
+        )
+        .replace(
+            /<meta name="description" id="pageDescription" content="[^"]*">/,
+            `<meta name="description" content="${escapedExcerpt}">`
         )
         .replace(
             /<link rel="canonical" id="canonicalLink" href="[^"]*">/,
             `<link rel="canonical" href="${canonicalUrl}">`
         )
         .replace(
+            /<meta property="og:title" id="ogTitle" content="[^"]*">/,
+            `<meta property="og:title" content="${escapedTitle}">`
+        )
+        .replace(
+            /<meta property="og:description" id="ogDescription" content="[^"]*">/,
+            `<meta property="og:description" content="${escapedExcerpt}">`
+        )
+        .replace(
             /<meta property="og:url" id="ogUrl" content="[^"]*">/,
             `<meta property="og:url" content="${canonicalUrl}">`
         )
         .replace(
+            /<meta name="twitter:title" id="twitterTitle" content="[^"]*">/,
+            `<meta name="twitter:title" content="${escapedTitle}">`
+        )
+        .replace(
+            /<meta name="twitter:description" id="twitterDescription" content="[^"]*">/,
+            `<meta name="twitter:description" content="${escapedExcerpt}">`
+        )
+        .replace(
             /<h1 class="post-title" id="postTitle">Loading\.\.\.<\/h1>/,
-            `<h1 class="post-title">${post.title}</h1>`
+            `<h1 class="post-title">${escapedTitle}</h1>`
         )
         .replace(
             /<div class="post-meta" id="postMeta"><\/div>/,
-            `<div class="post-meta">By ${post.author} \u2022 ${formattedDate}</div>`
+            `<div class="post-meta">By ${escapedAuthor} \u2022 ${formattedDate}</div>`
         )
         .replace(
             /<div class="post-content" id="postContent">\s*<p>Loading blog post\.\.\.<\/p>\s*<\/div>/,

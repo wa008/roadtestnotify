@@ -15,7 +15,7 @@ If you book your road test before your G1 expires, you're allowed to take the te
 
 Just make sure the booking is made while your licence is still valid.
 
-Once you've booked, visit a DriveTest Centre to get a temporary extension so you're legally allowed to drive to your test.
+Once you've booked, visit a DriveTest centre to get a temporary extension so you're legally allowed to drive to your test.
 
 Reference: https://drivetest.ca/home/faqs/#tab84
 

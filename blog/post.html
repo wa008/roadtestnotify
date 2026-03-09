@@ -4,9 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="pageTitle">Blog Post - Road Test Notification</title>
+    <meta name="description" id="pageDescription" content="Read the latest Road Test Notification blog post.">
+    <meta name="robots" content="index, follow">
     <link rel="canonical" id="canonicalLink" href="https://www.roadtestnotify.ca/blog">
     <meta property="og:type" content="article">
+    <meta property="og:title" id="ogTitle" content="Blog Post - Road Test Notification">
+    <meta property="og:description" id="ogDescription" content="Read the latest Road Test Notification blog post.">
     <meta property="og:url" id="ogUrl" content="https://www.roadtestnotify.ca/blog">
+    <meta property="og:site_name" content="Road Test Notification">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" id="twitterTitle" content="Blog Post - Road Test Notification">
+    <meta name="twitter:description" id="twitterDescription" content="Read the latest Road Test Notification blog post.">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../shared/topbar.css">
     <link rel="stylesheet" href="../shared/footer.css">
@@ -219,6 +227,18 @@
             document.getElementById('ogUrl').setAttribute('content', canonicalUrl);
         }
 
+        function setPageMetadata(postMeta) {
+            const title = `${postMeta.title} - Road Test Notification`;
+            const description = postMeta.excerpt || `Read ${postMeta.title} on Road Test Notification.`;
+
+            document.getElementById('pageTitle').textContent = title;
+            document.getElementById('pageDescription').setAttribute('content', description);
+            document.getElementById('ogTitle').setAttribute('content', postMeta.title);
+            document.getElementById('ogDescription').setAttribute('content', description);
+            document.getElementById('twitterTitle').setAttribute('content', postMeta.title);
+            document.getElementById('twitterDescription').setAttribute('content', description);
+        }
+
         function getPostIdFromUrl() {
             // Legacy format: /blog/post.html?id=post-id
             const urlParams = new URLSearchParams(window.location.search);
@@ -259,9 +279,7 @@
             }
 
             setCanonicalAndOgUrl(postId);
-
-            // Update title and meta
-            document.getElementById('pageTitle').textContent = postMeta.title + ' - Road Test Notification';
+            setPageMetadata(postMeta);
             document.getElementById('postTitle').textContent = postMeta.title;
             
             // Parse date without timezone conversion

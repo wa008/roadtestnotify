@@ -25,7 +25,7 @@ Road Test Notification monitors the DriveTest booking system and sends you an in
 - **Privacy matters**: We will never ask for your driver's license information.
 - **Real-time monitoring**: We check for new slots constantly
 - **Instant notifications**: Receive SMS within minutes of a slot opening
-- **All locations**: Coverage all driver road test centers across Ontario 
+- **All locations**: Coverage across Ontario DriveTest centres
 - **Affordable pricing**: Starting at just $5 for 10 days
 
 ## Getting Started
