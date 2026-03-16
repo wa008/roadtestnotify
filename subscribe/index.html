@@ -160,6 +160,14 @@
             background-color: #0052a3;
         }
 
+        .climate-badge {
+            border: 0;
+            width: 100%;
+            max-width: 380px;
+            height: 38px;
+            margin-top: 8px;
+        }
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 2em;
@@ -232,7 +240,16 @@
                     <a href="https://buy.stripe.com/3cI7sN3MU6my1cQdsU4AU03" class="select-button">Select Plan</a>
                 </div>
             </div>
-            <p style="margin-top: 25px; color: #333; font-size: 1.05em;">All payments are securely processed through Stripe.</p>
+            <p style="margin-top: 25px; color: #333; font-size: 1.05em;">
+                All payments are securely processed through Stripe. We contribute to carbon removal through
+                <a href="https://climate.stripe.com/5wMem0" target="_blank" rel="noopener noreferrer" style="color: #0066cc; text-decoration: none;">Stripe Climate</a>.
+            </p>
+            <iframe
+                class="climate-badge"
+                loading="lazy"
+                title="Stripe Climate badge"
+                src="https://climate.stripe.com/badge/Y6LRxf?theme=light&size=small&locale=en-GB">
+            </iframe>
             <p style="margin-top: 15px; color: #666; font-size: 0.95em;">Already subscribed? <a href="https://billing.stripe.com/p/login/aFacN7dnu12e3kY74w4AU00" style="color: #0066cc; text-decoration: none;">Manage your subscription</a> to update payment details, view invoices, or cancel.</p>
         </div>
     </div>
