@@ -97,7 +97,7 @@ template = template.replace(
 console.log('Generating blog posts...');
 for (const post of blogPosts) {
     const htmlContent = marked.parse(post.body);
-    const canonicalUrl = `https://www.roadtestnotify.ca/blog/${encodeURIComponent(post.id)}`;
+    const canonicalUrl = `https://www.roadtestnotify.ca/blog/${encodeURIComponent(post.id)}/`;
     const formattedDate = formatDate(post.date);
     const escapedTitle = escapeHtml(post.title);
     const escapedExcerpt = escapeHtml(post.excerpt || `Read ${post.title} on Road Test Notification.`);
@@ -163,7 +163,7 @@ let indexHtml = fs.readFileSync(indexPath, 'utf-8');
 const listItems = blogPosts.length === 0
     ? '<p style="text-align: center; color: #666; padding: 50px;">No blog posts yet. Check back soon!</p>'
     : blogPosts.map(post => {
-        const postUrl = `/blog/${encodeURIComponent(post.id)}`;
+        const postUrl = `/blog/${encodeURIComponent(post.id)}/`;
         const formattedDate = formatDate(post.date);
         const t = escapeHtml(post.title);
         const e = escapeHtml(post.excerpt);
