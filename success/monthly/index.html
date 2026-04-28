@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscription Activated | Road Test Notification</title>
+    <meta name="description" content="Your monthly road test alert subscription has been activated.">
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18125969897"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18125969897');
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../shared/topbar.css">
+    <link rel="stylesheet" href="../../shared/footer.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding-top: 60px;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .success-card {
+            background-color: #ffffff;
+            padding: 50px 40px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .success-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background-color: #28a745;
+            color: #ffffff;
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 72px;
+            margin: 0 auto 24px;
+        }
+
+        h1 {
+            color: #0066cc;
+            font-size: 2.2em;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .plan-info {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 32px;
+        }
+
+        .info-section {
+            text-align: left;
+            background-color: #f8f9fa;
+            padding: 24px 28px;
+            margin-bottom: 32px;
+        }
+
+        .info-section h2 {
+            color: #0066cc;
+            font-size: 1.15em;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .info-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-section li {
+            padding: 6px 0;
+            color: #333;
+            font-size: 1em;
+        }
+
+        .info-section li::before {
+            content: "✓ ";
+            color: #28a745;
+            font-weight: 700;
+            margin-right: 4px;
+        }
+
+        .info-section a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .info-section a:hover {
+            text-decoration: underline;
+        }
+
+        .thanks-message {
+            color: #333;
+            font-size: 1.05em;
+            margin-bottom: 32px;
+            padding: 0 10px;
+        }
+
+        .thanks-message a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .thanks-message a:hover {
+            text-decoration: underline;
+        }
+
+        .cta-row {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            font-size: 1em;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            min-width: 180px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+            font-family: 'Open Sans', Arial, sans-serif;
+        }
+
+        .btn-primary {
+            background-color: #0066cc;
+            color: #ffffff;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #0052a3;
+        }
+
+        .btn-secondary {
+            background-color: #ffffff;
+            color: #0066cc;
+            border: 2px solid #0066cc;
+            padding: 10px 26px;
+        }
+
+        .btn-secondary:hover {
+            background-color: #f0f7ff;
+        }
+
+        @media (max-width: 480px) {
+            .success-card {
+                padding: 36px 24px;
+            }
+
+            h1 {
+                font-size: 1.6em;
+            }
+
+            .btn {
+                width: 100%;
+                min-width: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Topbar Placeholder -->
+    <div id="topbar-placeholder"></div>
+    <script src="../../shared/topbar-loader.js"></script>
+
+    <div class="container">
+        <div class="success-card">
+            <div class="success-icon">✓</div>
+            <h1>Subscription Activated</h1>
+            <p class="plan-info">Monthly Subscription &middot; $10/month</p>
+
+            <div class="info-section">
+                <h2>What's next?</h2>
+                <ul>
+                    <li>You'll receive instant SMS notifications when road test slots open up.</li>
+                    <li>Monitoring continues every month until you cancel.</li>
+                    <li>You can <a href="https://billing.stripe.com/p/login/aFacN7dnu12e3kY74w4AU00">manage your subscription</a> anytime to update payment details, view invoices, or cancel.</li>
+                </ul>
+            </div>
+
+            <p class="thanks-message">
+                Thanks for subscribing. You will receive a confirmation SMS within 10 minutes. If not, please <a href="/contact/">contact us</a>.
+            </p>
+
+            <div class="cta-row">
+                <a href="https://billing.stripe.com/p/login/aFacN7dnu12e3kY74w4AU00" class="btn btn-secondary">Manage Subscription</a>
+                <a href="/" class="btn btn-primary">Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <script src="../../shared/footer-loader.js"></script>
+</body>
+</html>
