@@ -74,6 +74,15 @@ function jsonResponse(data, status = 200) {
 }
 
 export async function onRequestPost({ request, env }) {
+    // Block direct API hits and cross-origin scrapers. Real browsers fetching
+    // from /checkout/{plan}/ always send a Referer that begins with our own
+    // origin. Easy to spoof but stops ~99% of casual card-testing automation.
+    const referer = request.headers.get('Referer') || '';
+    const allowedOrigin = env.FRONTEND_ORIGIN || 'https://www.roadtestnotify.ca';
+    if (!referer.startsWith(allowedOrigin)) {
+        return jsonResponse({ error: 'Forbidden' }, 403);
+    }
+
     if (!env.STRIPE_API_KEY) {
         return jsonResponse({ error: 'Server is missing STRIPE_API_KEY' }, 500);
     }
