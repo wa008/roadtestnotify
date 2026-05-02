@@ -41,7 +41,7 @@ const CUSTOM_FIELDS = [
     },
     {
         key: 'location',
-        label: { type: 'custom', custom: 'Location' },
+        label: { type: 'custom', custom: 'Test Centre' },
         type: 'text',
         text: { default_value: 'Toronto Port Union', maximum_length: 25 },
     },
