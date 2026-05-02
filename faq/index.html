@@ -118,6 +118,16 @@
             padding-left: 28px;
         }
 
+        .contact-link {
+            color: #0066cc;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 2em;
@@ -219,11 +229,10 @@
             <div class="faq-item">
                 <div class="faq-question"><span class="question-label">Q5:</span>Can I reply directly to the SMS
                     notification?</div>
-                <div class="faq-answer">Please do not reply directly to our SMS notifications &mdash; the number is
-                    used for outbound alerts only and replies are not monitored. If you have any questions or need
-                    help, please email us at <a href="mailto:roadtestnotifications@gmail.com"
-                        style="color: #0066cc; text-decoration: none;">roadtestnotifications@gmail.com</a> or use the
-                    <a href="/contact" style="color: #0066cc; text-decoration: none;">contact page</a>.</div>
+                <div class="faq-answer">You can reply STOP to unsubscribe &mdash; this keyword is handled
+                    automatically. Any other replies to the SMS number are not monitored, so for all other
+                    questions please email <span class="contact-link" style="cursor: pointer;" onclick="navigator.clipboard.writeText('roadtestnotifications@gmail.com').then(() => { this.dataset.original = this.textContent; this.textContent = 'Copied!'; setTimeout(() => this.textContent = this.dataset.original, 1500); })">roadtestnotifications@gmail.com</span> or use
+                    the <a href="/contact" style="color: #0066cc; text-decoration: none;">contact page</a>.</div>
             </div>
         </div>
     </div>

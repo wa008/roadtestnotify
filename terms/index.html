@@ -133,6 +133,16 @@
             text-decoration: underline;
         }
 
+        .contact-link {
+            color: #0066cc;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+
         @media (max-width: 768px) {
             h1 {
                 font-size: 2em;
@@ -209,8 +219,7 @@
                 dynamically by DriveTest, so the number of messages depends on slot availability.</p>
             <p><strong>Cost:</strong> Message and data rates may apply. Charges from your mobile carrier are your
                 responsibility.</p>
-            <p><strong>Help:</strong> Reply <strong>HELP</strong> for help, or email <a
-                    href="mailto:roadtestnotifications@gmail.com">roadtestnotifications@gmail.com</a>.</p>
+            <p><strong>Help:</strong> Reply <strong>HELP</strong> for help, or email <span class="contact-link" style="cursor: pointer;" onclick="navigator.clipboard.writeText('roadtestnotifications@gmail.com').then(() => { this.dataset.original = this.textContent; this.textContent = 'Copied!'; setTimeout(() => this.textContent = this.dataset.original, 1500); })">roadtestnotifications@gmail.com</span>.</p>
             <p><strong>Cancel:</strong> Reply <strong>STOP</strong> to cancel. After you reply STOP, you will receive
                 a one-time opt-out confirmation message and we will stop sending SMS to that number.</p>
             <p><strong>Carriers:</strong> Carriers are not liable for delayed or undelivered messages. Service may not
@@ -221,8 +230,7 @@
             <div class="highlight">
                 <p style="margin-bottom: 0;"><strong>Please do not reply to SMS notifications other than with HELP or
                         STOP.</strong> The number is used for outbound alerts only and other replies are not
-                    monitored. For any questions, please email <a
-                        href="mailto:roadtestnotifications@gmail.com">roadtestnotifications@gmail.com</a>.</p>
+                    monitored. For any questions, please email <span class="contact-link" style="cursor: pointer;" onclick="navigator.clipboard.writeText('roadtestnotifications@gmail.com').then(() => { this.dataset.original = this.textContent; this.textContent = 'Copied!'; setTimeout(() => this.textContent = this.dataset.original, 1500); })">roadtestnotifications@gmail.com</span>.</p>
             </div>
         </div>
 
@@ -263,7 +271,7 @@
             <h2>Contact</h2>
             <p>Questions about these Terms or the Service:</p>
             <ul>
-                <li>Email: <a href="mailto:roadtestnotifications@gmail.com">roadtestnotifications@gmail.com</a></li>
+                <li>Email: <span class="contact-link" style="cursor: pointer;" onclick="navigator.clipboard.writeText('roadtestnotifications@gmail.com').then(() => { this.dataset.original = this.textContent; this.textContent = 'Copied!'; setTimeout(() => this.textContent = this.dataset.original, 1500); })">roadtestnotifications@gmail.com</span></li>
                 <li>Contact page: <a href="/contact/">roadtestnotify.ca/contact</a></li>
             </ul>
         </div>
