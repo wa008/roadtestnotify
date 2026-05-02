@@ -11,6 +11,26 @@
     margin: 0;
 }
 
+.site-footer .footer-links {
+    margin-top: 8px;
+}
+
+.site-footer .footer-links a {
+    color: #666;
+    text-decoration: none;
+    margin: 0 4px;
+}
+
+.site-footer .footer-links a:hover {
+    color: #0066cc;
+    text-decoration: underline;
+}
+
+.site-footer .footer-links span {
+    color: #aaa;
+    margin: 0 2px;
+}
+
 @media (max-width: 480px) {
     .site-footer {
         padding: 20px 15px;
