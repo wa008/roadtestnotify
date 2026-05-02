@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18125969897"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18125969897');
+    </script>
+
+    <title>Complete Monthly Subscription Checkout | Road Test Notification</title>
+    <meta name="description" content="Confirm your Monthly Road Test Notification subscription and complete payment.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://www.roadtestnotify.ca/checkout/monthly/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="theme-color" content="#0066cc">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/shared/topbar.css">
+    <link rel="stylesheet" href="/shared/footer.css">
+    <link rel="stylesheet" href="/checkout/checkout.css">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body data-plan="monthly">
+    <!-- Topbar Placeholder -->
+    <div id="topbar-placeholder"></div>
+    <script src="/shared/topbar-loader.js"></script>
+
+    <header>
+        <h1>Complete Your Subscription</h1>
+        <p class="tagline">A few details to enable your road test alerts</p>
+    </header>
+
+    <div class="container">
+        <div class="content-section">
+            <a href="/subscribe/" class="back-link">&larr; Back to plans</a>
+
+            <div class="plan-summary">
+                <div class="plan-summary-name">Monthly Subscription</div>
+                <div class="plan-summary-price">$10 <span class="plan-summary-period">/ month &middot; cancel anytime</span></div>
+                <p class="plan-summary-desc">Instant SMS notifications &middot; Ongoing monitoring of road test cancellations</p>
+            </div>
+
+            <div class="consent-block" id="sms-consent">
+                <label class="consent-label">
+                    <input type="checkbox" id="smsConsent" class="consent-checkbox">
+                    <span class="consent-text">
+                        I agree to receive automated road test cancellation SMS alerts from
+                        <strong>Road Test Notify SMS Alerts</strong> at the phone number I provide below.
+                        Message frequency varies. Message and data rates may apply.
+                        Reply <strong>HELP</strong> for help or <strong>STOP</strong> to cancel.
+                        See our <a href="/privacy/">Privacy Policy</a> and
+                        <a href="/terms/">Terms of Service</a>.
+                    </span>
+                </label>
+            </div>
+
+            <div class="checkout-wrap" id="checkoutWrap">
+                <div id="checkout" class="checkout-mount"></div>
+                <div class="checkout-loading" id="checkoutLoading">Loading payment form&hellip;</div>
+            </div>
+            <p class="locked-hint" id="lockedHint">&uarr; Check the box above to enable payment</p>
+            <div class="checkout-error" id="checkoutError"></div>
+        </div>
+    </div>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script src="/shared/footer-loader.js"></script>
+    <script src="/checkout/checkout.js"></script>
+</body>
+</html>

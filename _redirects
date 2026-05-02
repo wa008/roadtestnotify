@@ -7,4 +7,8 @@
 /contact /contact/ 301
 /success/monthly /success/monthly/ 301
 /success/10day /success/10day/ 301
+/checkout /subscribe/ 301
+/checkout/ /subscribe/ 301
+/checkout/10day /checkout/10day/ 301
+/checkout/monthly /checkout/monthly/ 301
 /blog/:slug /blog/:slug/ 301
