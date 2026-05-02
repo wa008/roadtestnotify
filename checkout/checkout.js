@@ -17,6 +17,9 @@ var API_BASE = '';
     var checkoutWrap = document.getElementById('checkoutWrap');
     var loadingState = document.getElementById('checkoutLoading');
     var errorBox = document.getElementById('checkoutError');
+    var errorText = document.getElementById('checkoutErrorText');
+    var retryBtn = document.getElementById('errorRetry');
+    var emailEl = document.getElementById('errorEmail');
 
     if (!plan || !checkbox || !checkoutWrap) return;
 
@@ -40,9 +43,41 @@ var API_BASE = '';
     }
 
     function showError(msg) {
-        errorBox.textContent = msg;
+        if (errorText) {
+            errorText.textContent = msg;
+        } else {
+            errorBox.textContent = msg;
+        }
         errorBox.classList.add('is-visible');
         if (loadingState) loadingState.style.display = 'none';
+    }
+
+    function clearError() {
+        errorBox.classList.remove('is-visible');
+    }
+
+    function retryLoad() {
+        loaded = false;
+        clearError();
+        if (loadingState) loadingState.style.display = '';
+        loadCheckout();
+    }
+
+    function copyEmail() {
+        if (!emailEl) return;
+        var original = emailEl.dataset.original || emailEl.textContent;
+        emailEl.dataset.original = original;
+        var addr = 'roadtestnotifications@gmail.com';
+        function done(text) {
+            emailEl.textContent = text;
+            setTimeout(function () { emailEl.textContent = original; }, 1500);
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(addr).then(function () { done('Copied!'); })
+                .catch(function () { done('Copy failed'); });
+        } else {
+            done('Copy unavailable');
+        }
     }
 
     async function loadCheckout() {
@@ -50,7 +85,7 @@ var API_BASE = '';
         loaded = true;
 
         if (!stripe) {
-            showError('Payment is not configured yet. Please email roadtestnotifications@gmail.com to subscribe.');
+            showError('Payment is not configured yet.');
             return;
         }
 
@@ -73,13 +108,23 @@ var API_BASE = '';
             if (loadingState) loadingState.style.display = 'none';
             checkout.mount('#checkout');
         } catch (err) {
-            showError('Could not load payment form: ' + (err && err.message ? err.message : err) +
-                '. Please refresh the page or email roadtestnotifications@gmail.com.');
+            showError('Could not load the payment form. ' + (err && err.message ? err.message : err));
         }
     }
 
     syncLock();
     checkbox.addEventListener('change', syncLock);
+
+    if (retryBtn) retryBtn.addEventListener('click', retryLoad);
+    if (emailEl) {
+        emailEl.addEventListener('click', copyEmail);
+        emailEl.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                copyEmail();
+            }
+        });
+    }
 
     // If the user clicks anywhere over the locked iframe area, nudge the
     // consent block so they understand why the form is greyed out.

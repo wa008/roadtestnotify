@@ -60,7 +60,14 @@
                 <div id="checkout" class="checkout-mount"></div>
                 <div class="checkout-loading" id="checkoutLoading">Loading payment form&hellip;</div>
             </div>
-            <div class="checkout-error" id="checkoutError"></div>
+            <div class="checkout-error" id="checkoutError">
+                <p class="error-text" id="checkoutErrorText"></p>
+                <div class="error-actions">
+                    <button type="button" class="error-btn-primary" id="errorRetry">Try again</button>
+                    <span class="error-email-label">or email us:</span>
+                    <span class="error-email" id="errorEmail" role="button" tabindex="0" title="Click to copy">roadtestnotifications@gmail.com</span>
+                </div>
+            </div>
         </div>
     </div>
 
