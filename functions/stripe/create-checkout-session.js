@@ -101,7 +101,6 @@ export async function onRequestPost({ request, env }) {
         line_items: [{ price: priceId, quantity: 1 }],
         phone_number_collection: { enabled: true },
         custom_fields: CUSTOM_FIELDS,
-        consent_collection: { terms_of_service: 'required' },
         metadata: { plan },
         return_url: returnUrl,
     };

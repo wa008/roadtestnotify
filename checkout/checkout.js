@@ -15,7 +15,6 @@ var API_BASE = '';
     var checkbox = document.getElementById('smsConsent');
     var consentBlock = document.getElementById('sms-consent');
     var checkoutWrap = document.getElementById('checkoutWrap');
-    var lockedHint = document.getElementById('lockedHint');
     var loadingState = document.getElementById('checkoutLoading');
     var errorBox = document.getElementById('checkoutError');
 
@@ -34,11 +33,9 @@ var API_BASE = '';
     function syncLock() {
         if (checkbox.checked) {
             checkoutWrap.classList.add('is-unlocked');
-            lockedHint.style.display = 'none';
             consentBlock.classList.remove('nudge');
         } else {
             checkoutWrap.classList.remove('is-unlocked');
-            lockedHint.style.display = '';
         }
     }
 
