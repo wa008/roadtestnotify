@@ -7,7 +7,9 @@ const DIST = 'dist';
 const POSTS_DIR = path.join('blog', 'posts');
 const IGNORE = new Set([
     'node_modules', '.git', '.gitignore', '.DS_Store',
-    'dist', 'build.js', 'package.json', 'package-lock.json'
+    'dist', 'build.js', 'package.json', 'package-lock.json',
+    // CF Pages reads functions/ from project root, not from build output.
+    'functions',
 ]);
 
 const IGNORE_PATTERNS = [/^\.env/];
