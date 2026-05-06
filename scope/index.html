@@ -97,30 +97,164 @@
             color: #333;
             font-size: 1.1em;
             font-weight: 600;
-            margin-bottom: 10px;
         }
 
-        .scope-list {
-            list-style-type: disc;
-            margin-left: 30px;
+        /* Search bar */
+        .search-bar {
+            position: sticky;
+            top: 60px;
+            background: #ffffff;
+            z-index: 10;
+            padding: 14px 0;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 10px 14px;
+            border: 1px solid #d0d0d0;
+            border-radius: 6px;
+            font-size: 1em;
+            font-family: inherit;
+            color: #333;
+        }
+
+        .search-bar input:focus {
+            outline: none;
+            border-color: #0066cc;
+        }
+
+        .search-counter {
+            color: #666;
+            font-size: 0.9em;
+            white-space: nowrap;
+        }
+
+        /* Centre groups */
+        .centre-group {
+            margin-top: 20px;
+        }
+
+        .group-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            user-select: none;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .group-header:hover h3 {
+            color: #0066cc;
+        }
+
+        .group-count {
+            color: #999;
+            font-size: 0.95em;
+            font-weight: 400;
+        }
+
+        .group-arrow {
+            margin-left: auto;
+            color: #999;
+            font-size: 0.85em;
+            transition: transform 0.2s;
+        }
+
+        .centre-group.collapsed .group-arrow {
+            transform: rotate(-90deg);
+        }
+
+        .centre-group.collapsed .group-body {
+            display: none;
+        }
+
+        .group-note {
+            color: #888;
+            font-size: 0.85em;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        /* Chip grid */
+        .chip-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .chip {
+            position: relative;
+            display: inline-block;
+            padding: 7px 14px;
+            background: #f5f9ff;
+            border: 1px solid #d0e3ff;
+            border-radius: 18px;
+            color: #0066cc;
+            font-size: 0.95em;
+            font-family: inherit;
+            cursor: pointer;
+            transition: background 0.15s, border-color 0.15s, color 0.15s;
+        }
+
+        .chip:hover {
+            background: #e3f0ff;
+            border-color: #0066cc;
+        }
+
+        .chip:focus {
+            outline: 2px solid #0066cc;
+            outline-offset: 2px;
+        }
+
+        .chip.copied {
+            background: #d4edda;
+            border-color: #28a745;
+            color: #155724;
+        }
+
+        .chip.copied::after {
+            content: "Copied!";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #28a745;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75em;
+            margin-bottom: 4px;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+
+        .empty-message {
+            color: #888;
+            font-style: italic;
+            padding: 20px 0;
+            display: none;
+        }
+
+        .empty-message.visible {
+            display: block;
+        }
+
+        .footer-note {
+            margin-top: 30px;
             color: #333;
             font-size: 1.05em;
         }
 
-        .scope-list li {
-            margin-bottom: 8px;
-        }
-
-        .scope-section {
-            margin-top: 15px;
-        }
-
-        .scope-category {
-            margin-bottom: 25px;
-        }
-
-        .scope-category:last-child {
-            margin-bottom: 0;
+        .footer-note a {
+            color: #0066cc;
+            text-decoration: none;
         }
 
         @media (max-width: 768px) {
@@ -149,6 +283,11 @@
             .container {
                 padding: 15px;
             }
+
+            .chip {
+                font-size: 0.9em;
+                padding: 6px 12px;
+            }
         }
     </style>
 </head>
@@ -160,47 +299,190 @@
 
     <header>
         <h1>Available Ontario DriveTest Centres</h1>
-        <p class="tagline">See which Ontario test centres and test types are available</p>
+        <p class="tagline">Covering both G and G2 · all centres across Ontario</p>
     </header>
 
     <div class="container">
         <div class="content-section">
             <h2>Available Centres</h2>
-            <div class="scope-section">
-                <div class="scope-category">
-                    <h3>Test Types:</h3>
-                    <ul class="scope-list">
-                        <li>G</li>
-                        <li>G2</li>
-                    </ul>
-                </div>
 
-                <div class="scope-category">
-                    <h3>Available Test Centres:</h3>
-                    <ul class="scope-list">
-                        <li>Toronto Downsview</li>
-                        <li>Toronto Etobicoke</li>
-                        <li>Toronto Metro East</li>
-                        <li>Toronto Port Union</li>
-                        <li>Ottawa Walkley</li>
-                        <li>Ottawa Canotek</li>
-                        <li>Brampton</li>
-                        <li>Mississauga</li>
-                        <li>Oakville</li>
-                        <li>Hamilton</li>
-                        <li>London</li>
-                        <li>Kitchener</li>
-                        <li>Windsor</li>
-                        <li>Burlington</li>
-                        <li>Oshawa</li>
-                        <li>Newmarket</li>
-                    </ul>
-                </div>
-                <p style="margin-top: 25px; color: #333; font-size: 1.05em;">Compare locations on our <a href="/pass-rates"
-                        style="color: #0066cc; text-decoration: none;">Pass Rates</a> page, or <a href="/contact"
-                        style="color: #0066cc; text-decoration: none;">contact</a> me if your preferred test centre is not on the
-                    list.</p>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search test centre..." autocomplete="off">
+                <span class="search-counter" id="search-counter">Showing 92 of 92</span>
             </div>
+
+            <p class="empty-message" id="empty-message">No test centres match your search.</p>
+
+            <div class="centre-group" data-group="major">
+                <div class="group-header">
+                    <h3>Major Cities</h3>
+                    <span class="group-count">(16)</span>
+                    <span class="group-arrow">▾</span>
+                </div>
+                <div class="group-body">
+                    <p class="group-note">Most-used centres — also appear in their respective regions below.</p>
+                    <div class="chip-grid">
+                        <button class="chip" data-name="Barrie">Barrie</button>
+                        <button class="chip" data-name="Burlington">Burlington</button>
+                        <button class="chip" data-name="Lindsay">Lindsay</button>
+                        <button class="chip" data-name="London">London</button>
+                        <button class="chip" data-name="Mississauga">Mississauga</button>
+                        <button class="chip" data-name="Newmarket">Newmarket</button>
+                        <button class="chip" data-name="Oakville">Oakville</button>
+                        <button class="chip" data-name="Orillia">Orillia</button>
+                        <button class="chip" data-name="Oshawa">Oshawa</button>
+                        <button class="chip" data-name="Ottawa Walkley">Ottawa Walkley</button>
+                        <button class="chip" data-name="Simcoe">Simcoe</button>
+                        <button class="chip" data-name="St Catharines">St Catharines</button>
+                        <button class="chip" data-name="Toronto Downsview">Toronto Downsview</button>
+                        <button class="chip" data-name="Toronto Etobicoke">Toronto Etobicoke</button>
+                        <button class="chip" data-name="Toronto Metro East">Toronto Metro East</button>
+                        <button class="chip" data-name="Toronto Port Union">Toronto Port Union</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="centre-group" data-group="gta">
+                <div class="group-header">
+                    <h3>Greater Toronto Area</h3>
+                    <span class="group-count">(10)</span>
+                    <span class="group-arrow">▾</span>
+                </div>
+                <div class="group-body">
+                    <div class="chip-grid">
+                        <button class="chip" data-name="Brampton">Brampton</button>
+                        <button class="chip" data-name="Burlington">Burlington</button>
+                        <button class="chip" data-name="Mississauga">Mississauga</button>
+                        <button class="chip" data-name="Newmarket">Newmarket</button>
+                        <button class="chip" data-name="Oakville">Oakville</button>
+                        <button class="chip" data-name="Oshawa">Oshawa</button>
+                        <button class="chip" data-name="Toronto Downsview">Toronto Downsview</button>
+                        <button class="chip" data-name="Toronto Etobicoke">Toronto Etobicoke</button>
+                        <button class="chip" data-name="Toronto Metro East">Toronto Metro East</button>
+                        <button class="chip" data-name="Toronto Port Union">Toronto Port Union</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="centre-group" data-group="eastern">
+                <div class="group-header">
+                    <h3>Eastern Ontario</h3>
+                    <span class="group-count">(22)</span>
+                    <span class="group-arrow">▾</span>
+                </div>
+                <div class="group-body">
+                    <div class="chip-grid">
+                        <button class="chip" data-name="Arnprior">Arnprior</button>
+                        <button class="chip" data-name="Bancroft">Bancroft</button>
+                        <button class="chip" data-name="Barrys Bay">Barrys Bay</button>
+                        <button class="chip" data-name="Belleville">Belleville</button>
+                        <button class="chip" data-name="Brockville">Brockville</button>
+                        <button class="chip" data-name="Carleton Place">Carleton Place</button>
+                        <button class="chip" data-name="Casselman">Casselman</button>
+                        <button class="chip" data-name="Cornwall">Cornwall</button>
+                        <button class="chip" data-name="Haliburton">Haliburton</button>
+                        <button class="chip" data-name="Hawkesbury">Hawkesbury</button>
+                        <button class="chip" data-name="Kingston">Kingston</button>
+                        <button class="chip" data-name="Lindsay">Lindsay</button>
+                        <button class="chip" data-name="Madoc">Madoc</button>
+                        <button class="chip" data-name="Ottawa Canotek">Ottawa Canotek</button>
+                        <button class="chip" data-name="Ottawa Walkley">Ottawa Walkley</button>
+                        <button class="chip" data-name="Pembroke">Pembroke</button>
+                        <button class="chip" data-name="Peterborough">Peterborough</button>
+                        <button class="chip" data-name="Port Hope">Port Hope</button>
+                        <button class="chip" data-name="Renfrew">Renfrew</button>
+                        <button class="chip" data-name="Rockland">Rockland</button>
+                        <button class="chip" data-name="Smiths Falls">Smiths Falls</button>
+                        <button class="chip" data-name="Winchester">Winchester</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="centre-group" data-group="northern">
+                <div class="group-header">
+                    <h3>Northern Ontario</h3>
+                    <span class="group-count">(39)</span>
+                    <span class="group-arrow">▾</span>
+                </div>
+                <div class="group-body">
+                    <div class="chip-grid">
+                        <button class="chip" data-name="Atikokan">Atikokan</button>
+                        <button class="chip" data-name="Blind River">Blind River</button>
+                        <button class="chip" data-name="Chapleau">Chapleau</button>
+                        <button class="chip" data-name="Cochrane">Cochrane</button>
+                        <button class="chip" data-name="Dryden">Dryden</button>
+                        <button class="chip" data-name="Dubreuilville">Dubreuilville</button>
+                        <button class="chip" data-name="Ear Falls">Ear Falls</button>
+                        <button class="chip" data-name="Elliot Lake">Elliot Lake</button>
+                        <button class="chip" data-name="Espanola">Espanola</button>
+                        <button class="chip" data-name="Fort Frances">Fort Frances</button>
+                        <button class="chip" data-name="Geraldton">Geraldton</button>
+                        <button class="chip" data-name="Hearst">Hearst</button>
+                        <button class="chip" data-name="Hornepayne">Hornepayne</button>
+                        <button class="chip" data-name="Huntsville">Huntsville</button>
+                        <button class="chip" data-name="Ignace">Ignace</button>
+                        <button class="chip" data-name="Kapuskasing">Kapuskasing</button>
+                        <button class="chip" data-name="Kenora">Kenora</button>
+                        <button class="chip" data-name="Kirkland Lake">Kirkland Lake</button>
+                        <button class="chip" data-name="Little Current">Little Current</button>
+                        <button class="chip" data-name="Manitouwadge">Manitouwadge</button>
+                        <button class="chip" data-name="Marathon">Marathon</button>
+                        <button class="chip" data-name="Mattawa">Mattawa</button>
+                        <button class="chip" data-name="Moosonee">Moosonee</button>
+                        <button class="chip" data-name="New Liskeard">New Liskeard</button>
+                        <button class="chip" data-name="Nipigon">Nipigon</button>
+                        <button class="chip" data-name="North Bay">North Bay</button>
+                        <button class="chip" data-name="Parry Sound">Parry Sound</button>
+                        <button class="chip" data-name="Pickle Lake">Pickle Lake</button>
+                        <button class="chip" data-name="Rainy River">Rainy River</button>
+                        <button class="chip" data-name="Red Lake">Red Lake</button>
+                        <button class="chip" data-name="Sault Ste Marie">Sault Ste Marie</button>
+                        <button class="chip" data-name="Schreiber">Schreiber</button>
+                        <button class="chip" data-name="Sioux Lookout">Sioux Lookout</button>
+                        <button class="chip" data-name="Sudbury">Sudbury</button>
+                        <button class="chip" data-name="Thessalon">Thessalon</button>
+                        <button class="chip" data-name="Thunder Bay">Thunder Bay</button>
+                        <button class="chip" data-name="Timmins">Timmins</button>
+                        <button class="chip" data-name="Wawa">Wawa</button>
+                        <button class="chip" data-name="White River">White River</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="centre-group" data-group="western">
+                <div class="group-header">
+                    <h3>Western Ontario</h3>
+                    <span class="group-count">(21)</span>
+                    <span class="group-arrow">▾</span>
+                </div>
+                <div class="group-body">
+                    <div class="chip-grid">
+                        <button class="chip" data-name="Barrie">Barrie</button>
+                        <button class="chip" data-name="Brantford">Brantford</button>
+                        <button class="chip" data-name="Chatham">Chatham</button>
+                        <button class="chip" data-name="Clinton">Clinton</button>
+                        <button class="chip" data-name="Collingwood">Collingwood</button>
+                        <button class="chip" data-name="Guelph">Guelph</button>
+                        <button class="chip" data-name="Hamilton">Hamilton</button>
+                        <button class="chip" data-name="Kitchener">Kitchener</button>
+                        <button class="chip" data-name="Leamington">Leamington</button>
+                        <button class="chip" data-name="London">London</button>
+                        <button class="chip" data-name="Orangeville">Orangeville</button>
+                        <button class="chip" data-name="Orillia">Orillia</button>
+                        <button class="chip" data-name="Owen Sound">Owen Sound</button>
+                        <button class="chip" data-name="Sarnia">Sarnia</button>
+                        <button class="chip" data-name="Simcoe">Simcoe</button>
+                        <button class="chip" data-name="St Catharines">St Catharines</button>
+                        <button class="chip" data-name="Stratford">Stratford</button>
+                        <button class="chip" data-name="Tillsonburg">Tillsonburg</button>
+                        <button class="chip" data-name="Walkerton">Walkerton</button>
+                        <button class="chip" data-name="Windsor">Windsor</button>
+                        <button class="chip" data-name="Woodstock">Woodstock</button>
+                    </div>
+                </div>
+            </div>
+
+            <p class="footer-note">Compare locations on our <a href="/pass-rates">Pass Rates</a> page, or <a href="/contact">contact</a> me if your preferred test centre is not on the list.</p>
         </div>
     </div>
 
@@ -208,6 +490,81 @@
     <div id="footer-placeholder"></div>
 
     <script src="../shared/footer-loader.js"></script>
+
+    <script>
+        (function () {
+            const searchInput = document.getElementById('search-input');
+            const counter = document.getElementById('search-counter');
+            const emptyMessage = document.getElementById('empty-message');
+            const groups = document.querySelectorAll('.centre-group');
+            const allChips = document.querySelectorAll('.chip');
+
+            const uniqueNames = new Set();
+            allChips.forEach(chip => uniqueNames.add(chip.dataset.name));
+            const totalUnique = uniqueNames.size;
+
+            // Group collapse/expand
+            groups.forEach(group => {
+                const header = group.querySelector('.group-header');
+                header.addEventListener('click', () => {
+                    group.classList.toggle('collapsed');
+                });
+            });
+
+            // Search filter
+            function filterCentres() {
+                const query = searchInput.value.toLowerCase().trim();
+                const matchedNames = new Set();
+                let anyVisible = false;
+
+                groups.forEach(group => {
+                    const chips = group.querySelectorAll('.chip');
+                    let groupHasMatch = false;
+                    chips.forEach(chip => {
+                        const name = chip.dataset.name.toLowerCase();
+                        const isMatch = !query || name.includes(query);
+                        chip.style.display = isMatch ? '' : 'none';
+                        if (isMatch) {
+                            matchedNames.add(chip.dataset.name);
+                            groupHasMatch = true;
+                        }
+                    });
+                    group.style.display = groupHasMatch ? '' : 'none';
+                    if (groupHasMatch) anyVisible = true;
+                    if (query && groupHasMatch) {
+                        group.classList.remove('collapsed');
+                    }
+                });
+
+                counter.textContent = `Showing ${matchedNames.size} of ${totalUnique}`;
+                emptyMessage.classList.toggle('visible', !anyVisible);
+            }
+
+            searchInput.addEventListener('input', filterCentres);
+
+            // Copy to clipboard
+            allChips.forEach(chip => {
+                chip.addEventListener('click', async () => {
+                    const name = chip.dataset.name;
+                    try {
+                        await navigator.clipboard.writeText(name);
+                    } catch (err) {
+                        const ta = document.createElement('textarea');
+                        ta.value = name;
+                        ta.style.position = 'fixed';
+                        ta.style.opacity = '0';
+                        document.body.appendChild(ta);
+                        ta.select();
+                        try { document.execCommand('copy'); } catch (e) {}
+                        document.body.removeChild(ta);
+                    }
+                    document.querySelectorAll('.chip.copied').forEach(c => c.classList.remove('copied'));
+                    chip.classList.add('copied');
+                    setTimeout(() => chip.classList.remove('copied'), 1500);
+                });
+            });
+        })();
+    </script>
 </body>
 
 </html>
