@@ -58,6 +58,25 @@ h1 {
     text-decoration: underline;
 }
 
+.centre-hint {
+    margin-bottom: 20px;
+    padding: 10px 14px;
+    background-color: #f5f9ff;
+    border: 1px solid #d0e3ff;
+    color: #333;
+    font-size: 0.95em;
+}
+
+.centre-hint a {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.centre-hint a:hover {
+    text-decoration: underline;
+}
+
 .consent-block {
     margin-bottom: 22px;
     padding: 8px 12px;
