@@ -104,13 +104,20 @@ export async function onRequestPost({ request, env }) {
     const frontendOrigin = env.FRONTEND_ORIGIN || 'https://www.roadtestnotify.ca';
     const returnUrl = `${frontendOrigin}${cfg.returnPath}?session_id={CHECKOUT_SESSION_ID}`;
 
+    const attribution = body.attribution || {};
+    const metadata = { plan };
+    for (const k of ['utm_source', 'utm_medium', 'utm_campaign', 'referrer', 'landing_page', 'landing_at']) {
+        const v = String(attribution[k] || '').trim().slice(0, 500);
+        if (v) metadata[k] = v;
+    }
+
     const payload = {
         ui_mode: 'embedded',
         mode: cfg.mode,
         line_items: [{ price: priceId, quantity: 1 }],
         phone_number_collection: { enabled: true },
         custom_fields: CUSTOM_FIELDS,
-        metadata: { plan },
+        metadata,
         return_url: returnUrl,
     };
 
