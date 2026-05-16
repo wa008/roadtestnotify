@@ -1,3 +1,23 @@
+// First-touch attribution: snapshot how the user found us on their very
+// first page load so the checkout API can stamp the Stripe order with the
+// original utm parameters and referrer. Subsequent navigations do not overwrite.
+(function () {
+    try {
+        var ATTR_KEY = 'rtn_attribution';
+        if (!localStorage.getItem(ATTR_KEY)) {
+            var params = new URLSearchParams(location.search);
+            localStorage.setItem(ATTR_KEY, JSON.stringify({
+                utm_source: params.get('utm_source') || '',
+                utm_medium: params.get('utm_medium') || '',
+                utm_campaign: params.get('utm_campaign') || '',
+                referrer: document.referrer || '',
+                landing_page: location.pathname,
+                landing_at: new Date().toISOString(),
+            }));
+        }
+    } catch (e) {}
+})();
+
 // Load shared topbar HTML
 (function () {
     'use strict';

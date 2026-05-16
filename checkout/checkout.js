@@ -89,11 +89,14 @@ var API_BASE = '';
             return;
         }
 
+        var attribution = {};
+        try { attribution = JSON.parse(localStorage.getItem('rtn_attribution') || '{}'); } catch (e) {}
+
         try {
             var resp = await fetch(API_BASE + '/stripe/create-checkout-session', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ plan: plan })
+                body: JSON.stringify({ plan: plan, attribution: attribution })
             });
 
             if (!resp.ok) {
