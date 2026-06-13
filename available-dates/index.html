@@ -14,18 +14,18 @@
       gtag('config', 'AW-18125969897');
     </script>
 
-    <title>Current Ontario Road Test Availability | Road Test Notification</title>
-    <meta name="description" content="See recently observed G and G2 DriveTest appointment availability by Ontario test centre.">
+    <title>Latest Ontario DriveTest Available Dates | Road Test Notification</title>
+    <meta name="description" content="See the latest observed G and G2 DriveTest available dates by Ontario test centre.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.roadtestnotify.ca/available-dates/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Current Ontario Road Test Availability">
-    <meta property="og:description" content="See recently observed G and G2 DriveTest appointment availability by Ontario test centre.">
+    <meta property="og:title" content="Latest Ontario DriveTest Available Dates">
+    <meta property="og:description" content="See the latest observed G and G2 DriveTest available dates by Ontario test centre.">
     <meta property="og:url" content="https://www.roadtestnotify.ca/available-dates/">
     <meta property="og:site_name" content="Road Test Notification">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Current Ontario Road Test Availability">
-    <meta name="twitter:description" content="See recently observed G and G2 DriveTest appointment availability by Ontario test centre.">
+    <meta name="twitter:title" content="Latest Ontario DriveTest Available Dates">
+    <meta name="twitter:description" content="See the latest observed G and G2 DriveTest available dates by Ontario test centre.">
 
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -123,7 +123,7 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            min-width: 620px;
+            min-width: 720px;
         }
 
         thead {
@@ -163,7 +163,6 @@
 
         .test-type {
             display: inline-block;
-            margin-left: 8px;
             padding: 2px 8px;
             color: #0066cc;
             background-color: #e8f4fd;
@@ -236,22 +235,22 @@
     <script src="../shared/topbar-loader.js"></script>
 
     <header>
-        <h1>Current Road Test Availability</h1>
-        <p class="tagline">Recently observed bookable G and G2 dates by Ontario DriveTest centre</p>
+        <h1>Latest Ontario DriveTest Available Dates</h1>
+        <p class="tagline">Latest observed bookable G and G2 dates by Ontario DriveTest centre</p>
     </header>
 
     <div class="container">
         <div class="content-section">
-            <h2>Available Dates</h2>
-            <p class="intro-text">This page shows the latest bookable date found in the latest scan for each test type and test centre.</p>
-            <p class="note-text">Availability can change quickly, so use this as a recent snapshot from the latest local update.</p>
-            <p id="statusText" class="status-text">Loading available dates...</p>
+            <h2>Latest Available Road Test Dates</h2>
+            <p class="intro-text">This page shows the latest bookable G and G2 road test dates found in recent DriveTest scans; availability can change quickly.</p>
+            <p id="statusText" class="status-text">Loading latest available dates...</p>
 
             <div class="table-wrapper">
                 <table>
                     <thead>
                         <tr>
                             <th scope="col">Test Centre</th>
+                            <th scope="col">G/G2</th>
                             <th scope="col">Latest Bookable Date</th>
                             <th scope="col">Updated</th>
                         </tr>
@@ -259,7 +258,6 @@
                     <tbody id="availableDatesTableBody"></tbody>
                 </table>
             </div>
-            <p id="generatedAt" class="last-updated"></p>
         </div>
     </div>
 
@@ -268,203 +266,24 @@
 
     <script src="../shared/footer-loader.js"></script>
     <script>
-        const BOOKABLE_DATES_DATA = {
-            "generatedAt": "2026-06-13T20:14:53.755228+00:00",
-            "sourceDirectory": "../drive-test-assistant/output/downloads",
-            "rows": [
-                {
-                    "testType": "G",
-                    "testCentre": "Barrie",
-                    "availableDate": "2026-09-30",
-                    "availableDateLabel": "September 30, 2026",
-                    "updatedAt": "2026-06-13T13:00:57-04:00",
-                    "updatedAtEpochMs": 1781370057000
-                },
-                {
-                    "testType": "G",
-                    "testCentre": "Burlington",
-                    "availableDate": "2026-09-30",
-                    "availableDateLabel": "September 30, 2026",
-                    "updatedAt": "2026-06-13T11:23:11-04:00",
-                    "updatedAtEpochMs": 1781364191000
-                },
-                {
-                    "testType": "G",
-                    "testCentre": "Guelph",
-                    "availableDate": "2026-09-30",
-                    "availableDateLabel": "September 30, 2026",
-                    "updatedAt": "2026-06-13T11:40:36-04:00",
-                    "updatedAtEpochMs": 1781365236000
-                },
-                {
-                    "testType": "G",
-                    "testCentre": "Hamilton",
-                    "availableDate": "2026-09-18",
-                    "availableDateLabel": "September 18, 2026",
-                    "updatedAt": "2026-06-13T11:30:09-04:00",
-                    "updatedAtEpochMs": 1781364609000
-                },
-                {
-                    "testType": "G",
-                    "testCentre": "Kitchener",
-                    "availableDate": "2026-09-30",
-                    "availableDateLabel": "September 30, 2026",
-                    "updatedAt": "2026-06-13T11:19:41-04:00",
-                    "updatedAtEpochMs": 1781363981000
-                },
-                {
-                    "testType": "G",
-                    "testCentre": "Lindsay",
-                    "availableDate": "2026-09-30",
-                    "availableDateLabel": "September 30, 2026",
-                    "updatedAt": "2026-06-13T13:40:16-04:00",
-                    "updatedAtEpochMs": 1781372416000
-                },
-                {
-                    "testType": "G",
-                    "testCentre": "Newmarket",
-                    "availableDate": "2026-09-30",
-                    "availableDateLabel": "September 30, 2026",
-                    "updatedAt": "2026-06-13T13:25:58-04:00",
-                    "updatedAtEpochMs": 1781371558000
-                },
-                {
-                    "testType": "G",
-                    "testCentre": "Simcoe",
-                    "availableDate": "2026-09-29",
-                    "availableDateLabel": "September 29, 2026",
-                    "updatedAt": "2026-06-13T11:26:39-04:00",
-                    "updatedAtEpochMs": 1781364399000
-                },
-                {
-                    "testType": "G",
-                    "testCentre": "Smiths Falls",
-                    "availableDate": "2026-08-31",
-                    "availableDateLabel": "August 31, 2026",
-                    "updatedAt": "2026-06-13T11:37:08-04:00",
-                    "updatedAtEpochMs": 1781365028000
-                },
-                {
-                    "testType": "G",
-                    "testCentre": "Toronto Downsview",
-                    "availableDate": "2026-09-30",
-                    "availableDateLabel": "September 30, 2026",
-                    "updatedAt": "2026-06-13T13:18:41-04:00",
-                    "updatedAtEpochMs": 1781371121000
-                },
-                {
-                    "testType": "G",
-                    "testCentre": "Toronto Port Union",
-                    "availableDate": "2026-09-15",
-                    "availableDateLabel": "September 15, 2026",
-                    "updatedAt": "2026-06-13T11:33:39-04:00",
-                    "updatedAtEpochMs": 1781364819000
-                },
-                {
-                    "testType": "G2",
-                    "testCentre": "Barrie",
-                    "availableDate": "2026-09-29",
-                    "availableDateLabel": "September 29, 2026",
-                    "updatedAt": "2026-06-13T13:08:05-04:00",
-                    "updatedAtEpochMs": 1781370485000
-                },
-                {
-                    "testType": "G2",
-                    "testCentre": "Lindsay",
-                    "availableDate": "2026-09-30",
-                    "availableDateLabel": "September 30, 2026",
-                    "updatedAt": "2026-06-13T11:16:00-04:00",
-                    "updatedAtEpochMs": 1781363760000
-                },
-                {
-                    "testType": "G2",
-                    "testCentre": "Newmarket",
-                    "availableDate": "2026-09-30",
-                    "availableDateLabel": "September 30, 2026",
-                    "updatedAt": "2026-06-13T13:29:39-04:00",
-                    "updatedAtEpochMs": 1781371779000
-                },
-                {
-                    "testType": "G2",
-                    "testCentre": "Oakville",
-                    "availableDate": "2026-09-30",
-                    "availableDateLabel": "September 30, 2026",
-                    "updatedAt": "2026-06-13T13:36:35-04:00",
-                    "updatedAtEpochMs": 1781372195000
-                },
-                {
-                    "testType": "G2",
-                    "testCentre": "Orillia",
-                    "availableDate": "2026-08-13",
-                    "availableDateLabel": "August 13, 2026",
-                    "updatedAt": "2026-06-13T11:44:16-04:00",
-                    "updatedAtEpochMs": 1781365456000
-                },
-                {
-                    "testType": "G2",
-                    "testCentre": "Oshawa",
-                    "availableDate": "2026-09-30",
-                    "availableDateLabel": "September 30, 2026",
-                    "updatedAt": "2026-06-13T13:15:01-04:00",
-                    "updatedAtEpochMs": 1781370901000
-                },
-                {
-                    "testType": "G2",
-                    "testCentre": "Peterborough",
-                    "availableDate": "2026-09-18",
-                    "availableDateLabel": "September 18, 2026",
-                    "updatedAt": "2026-06-13T13:11:34-04:00",
-                    "updatedAtEpochMs": 1781370694000
-                },
-                {
-                    "testType": "G2",
-                    "testCentre": "Smiths Falls",
-                    "availableDate": "2026-07-24",
-                    "availableDateLabel": "July 24, 2026",
-                    "updatedAt": "2026-06-13T13:04:36-04:00",
-                    "updatedAtEpochMs": 1781370276000
-                },
-                {
-                    "testType": "G2",
-                    "testCentre": "Toronto Downsview",
-                    "availableDate": "2026-09-03",
-                    "availableDateLabel": "September 3, 2026",
-                    "updatedAt": "2026-06-13T13:33:07-04:00",
-                    "updatedAtEpochMs": 1781371987000
-                },
-                {
-                    "testType": "G2",
-                    "testCentre": "Toronto Etobicoke",
-                    "availableDate": "2026-09-30",
-                    "availableDateLabel": "September 30, 2026",
-                    "updatedAt": "2026-06-13T13:22:19-04:00",
-                    "updatedAtEpochMs": 1781371339000
-                },
-                {
-                    "testType": "G2",
-                    "testCentre": "Toronto Port Union",
-                    "availableDate": "2026-09-02",
-                    "availableDateLabel": "September 2, 2026",
-                    "updatedAt": "2026-06-13T13:43:53-04:00",
-                    "updatedAtEpochMs": 1781372633000
-                }
-            ]
-        };
-
         let allRows = [];
 
-        function loadAvailableDates() {
+        async function loadAvailableDates() {
             const statusText = document.getElementById('statusText');
             const tableBody = document.getElementById('availableDatesTableBody');
 
             try {
-                const payload = BOOKABLE_DATES_DATA;
+                const response = await fetch('../statistics_data/bookable_dates.json');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch available dates data.');
+                }
+
+                const payload = await response.json();
                 allRows = Array.isArray(payload.rows)
-                    ? [...payload.rows].sort((a, b) => String(b.testCentre).localeCompare(String(a.testCentre)))
+                    ? [...payload.rows].sort((a, b) => Number(a.updatedAtEpochMs) - Number(b.updatedAtEpochMs))
                     : [];
                 renderTable();
-                renderGeneratedAt(payload.generatedAt);
-                window.setInterval(renderTable, 60 * 1000);
+                window.setInterval(renderTable, 1000);
             } catch (error) {
                 tableBody.innerHTML = '';
                 statusText.textContent = 'Unable to load available dates right now.';
@@ -481,8 +300,8 @@
                 <tr>
                     <td>
                         <span class="centre-name">${escapeHtml(row.testCentre)}</span>
-                        <span class="test-type">${escapeHtml(row.testType)}</span>
                     </td>
+                    <td><span class="test-type">${escapeHtml(row.testType)}</span></td>
                     <td class="date-cell">${escapeHtml(row.availableDateLabel || row.availableDate)}</td>
                     <td class="updated-cell" title="${escapeHtml(formatAbsoluteTime(row.updatedAtEpochMs))}">
                         ${escapeHtml(formatRelativeTime(row.updatedAtEpochMs))}
@@ -492,18 +311,8 @@
 
             statusText.classList.remove('error-text');
             statusText.textContent = allRows.length === 0
-                ? 'No recent available dates found.'
+                ? 'No latest available dates found.'
                 : '';
-        }
-
-        function renderGeneratedAt(generatedAt) {
-            const generatedAtElement = document.getElementById('generatedAt');
-            if (!generatedAt) {
-                generatedAtElement.textContent = '';
-                return;
-            }
-
-            generatedAtElement.textContent = `Data generated: ${new Date(generatedAt).toLocaleString()}`;
         }
 
         function formatRelativeTime(epochMs) {
@@ -511,23 +320,12 @@
                 return 'Unknown';
             }
 
-            const diffMs = Date.now() - epochMs;
-            if (diffMs < 60 * 1000) {
-                return 'Just now';
-            }
+            const diffSeconds = Math.max(0, Math.floor((Date.now() - epochMs) / 1000));
+            const hours = Math.floor(diffSeconds / 3600);
+            const minutes = Math.floor((diffSeconds % 3600) / 60);
+            const seconds = diffSeconds % 60;
 
-            const minutes = Math.floor(diffMs / (60 * 1000));
-            if (minutes < 60) {
-                return `${minutes} minute${minutes === 1 ? '' : 's'} ago`;
-            }
-
-            const hours = Math.floor(minutes / 60);
-            if (hours < 48) {
-                return `${hours} hour${hours === 1 ? '' : 's'} ago`;
-            }
-
-            const days = Math.floor(hours / 24);
-            return `${days} day${days === 1 ? '' : 's'} ago`;
+            return `${hours}h ${minutes}m ${seconds}s`;
         }
 
         function formatAbsoluteTime(epochMs) {
