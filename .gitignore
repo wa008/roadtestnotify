@@ -1,6 +1,7 @@
 .env*.local
 dist/
 node_modules/
+.claude/
 
 statistics_data/cron.log
 statistics_data/restart_statistics.sh

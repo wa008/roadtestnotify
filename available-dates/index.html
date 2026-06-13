@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18125969897"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18125969897');
+    </script>
+
+    <title>Current Ontario Road Test Availability | Road Test Notification</title>
+    <meta name="description" content="See recently observed G and G2 DriveTest appointment availability by Ontario test centre.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.roadtestnotify.ca/available-dates/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Current Ontario Road Test Availability">
+    <meta property="og:description" content="See recently observed G and G2 DriveTest appointment availability by Ontario test centre.">
+    <meta property="og:url" content="https://www.roadtestnotify.ca/available-dates/">
+    <meta property="og:site_name" content="Road Test Notification">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Current Ontario Road Test Availability">
+    <meta name="twitter:description" content="See recently observed G and G2 DriveTest appointment availability by Ontario test centre.">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="theme-color" content="#0066cc">
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../shared/topbar.css">
+    <link rel="stylesheet" href="../shared/footer.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+            padding-top: 60px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 40px 20px 20px 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            color: #0066cc;
+            font-size: 3em;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .tagline {
+            color: #666;
+            font-size: 1.1em;
+            font-weight: 400;
+        }
+
+        .content-section {
+            background-color: #ffffff;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #0066cc;
+            font-size: 1.5em;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .intro-text {
+            color: #333;
+            font-size: 1.05em;
+            margin-bottom: 15px;
+        }
+
+        .note-text,
+        .status-text {
+            color: #666;
+            font-size: 0.98em;
+            margin-bottom: 15px;
+        }
+
+        .status-text:empty {
+            display: none;
+        }
+
+        .error-text {
+            color: #b42318;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            margin-top: 20px;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 620px;
+        }
+
+        thead {
+            background-color: #f8fbff;
+        }
+
+        th,
+        td {
+            padding: 14px 18px;
+            text-align: left;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        th {
+            color: #0066cc;
+            font-size: 0.95em;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+
+        td {
+            color: #333;
+            font-size: 1em;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #fcfcfc;
+        }
+
+        .centre-name {
+            font-weight: 600;
+        }
+
+        .test-type {
+            display: inline-block;
+            margin-left: 8px;
+            padding: 2px 8px;
+            color: #0066cc;
+            background-color: #e8f4fd;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: 700;
+            vertical-align: middle;
+        }
+
+        .date-cell {
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .updated-cell {
+            color: #666;
+            white-space: nowrap;
+        }
+
+        .last-updated {
+            margin-top: 20px;
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .tagline {
+                font-size: 1em;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+
+            th,
+            td {
+                padding: 12px 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.6em;
+            }
+
+            header {
+                padding: 30px 15px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            .intro-text,
+            .note-text,
+            .status-text {
+                font-size: 0.95em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Topbar Placeholder -->
+    <div id="topbar-placeholder"></div>
+    <script src="../shared/topbar-loader.js"></script>
+
+    <header>
+        <h1>Current Road Test Availability</h1>
+        <p class="tagline">Recently observed bookable G and G2 dates by Ontario DriveTest centre</p>
+    </header>
+
+    <div class="container">
+        <div class="content-section">
+            <h2>Available Dates</h2>
+            <p class="intro-text">This page shows the latest bookable date found in the latest scan for each test type and test centre.</p>
+            <p class="note-text">Availability can change quickly, so use this as a recent snapshot from the latest local update.</p>
+            <p id="statusText" class="status-text">Loading available dates...</p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Test Centre</th>
+                            <th scope="col">Latest Bookable Date</th>
+                            <th scope="col">Updated</th>
+                        </tr>
+                    </thead>
+                    <tbody id="availableDatesTableBody"></tbody>
+                </table>
+            </div>
+            <p id="generatedAt" class="last-updated"></p>
+        </div>
+    </div>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <script src="../shared/footer-loader.js"></script>
+    <script>
+        const BOOKABLE_DATES_DATA = {
+            "generatedAt": "2026-06-13T20:03:02.546723+00:00",
+            "sourceDirectory": "../drive-test-assistant/output/downloads",
+            "rows": []
+        };
+
+        let allRows = [];
+
+        function loadAvailableDates() {
+            const statusText = document.getElementById('statusText');
+            const tableBody = document.getElementById('availableDatesTableBody');
+
+            try {
+                const payload = BOOKABLE_DATES_DATA;
+                allRows = Array.isArray(payload.rows)
+                    ? [...payload.rows].sort((a, b) => String(b.testCentre).localeCompare(String(a.testCentre)))
+                    : [];
+                renderTable();
+                renderGeneratedAt(payload.generatedAt);
+                window.setInterval(renderTable, 60 * 1000);
+            } catch (error) {
+                tableBody.innerHTML = '';
+                statusText.textContent = 'Unable to load available dates right now.';
+                statusText.classList.add('error-text');
+                console.error(error);
+            }
+        }
+
+        function renderTable() {
+            const statusText = document.getElementById('statusText');
+            const tableBody = document.getElementById('availableDatesTableBody');
+
+            tableBody.innerHTML = allRows.map(row => `
+                <tr>
+                    <td>
+                        <span class="centre-name">${escapeHtml(row.testCentre)}</span>
+                        <span class="test-type">${escapeHtml(row.testType)}</span>
+                    </td>
+                    <td class="date-cell">${escapeHtml(row.availableDateLabel || row.availableDate)}</td>
+                    <td class="updated-cell" title="${escapeHtml(formatAbsoluteTime(row.updatedAtEpochMs))}">
+                        ${escapeHtml(formatRelativeTime(row.updatedAtEpochMs))}
+                    </td>
+                </tr>
+            `).join('');
+
+            statusText.classList.remove('error-text');
+            statusText.textContent = allRows.length === 0
+                ? 'No recent available dates found.'
+                : '';
+        }
+
+        function renderGeneratedAt(generatedAt) {
+            const generatedAtElement = document.getElementById('generatedAt');
+            if (!generatedAt) {
+                generatedAtElement.textContent = '';
+                return;
+            }
+
+            generatedAtElement.textContent = `Data generated: ${new Date(generatedAt).toLocaleString()}`;
+        }
+
+        function formatRelativeTime(epochMs) {
+            if (!Number.isFinite(epochMs)) {
+                return 'Unknown';
+            }
+
+            const diffMs = Date.now() - epochMs;
+            if (diffMs < 60 * 1000) {
+                return 'Just now';
+            }
+
+            const minutes = Math.floor(diffMs / (60 * 1000));
+            if (minutes < 60) {
+                return `${minutes} minute${minutes === 1 ? '' : 's'} ago`;
+            }
+
+            const hours = Math.floor(minutes / 60);
+            if (hours < 48) {
+                return `${hours} hour${hours === 1 ? '' : 's'} ago`;
+            }
+
+            const days = Math.floor(hours / 24);
+            return `${days} day${days === 1 ? '' : 's'} ago`;
+        }
+
+        function formatAbsoluteTime(epochMs) {
+            if (!Number.isFinite(epochMs)) {
+                return 'Unknown';
+            }
+
+            return new Date(epochMs).toLocaleString();
+        }
+
+        function escapeHtml(value) {
+            return String(value == null ? '' : value)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        loadAvailableDates();
+    </script>
+</body>
+
+</html>

@@ -10,6 +10,7 @@ const IGNORE = new Set([
     'dist', 'build.js', 'package.json', 'package-lock.json',
     // CF Pages reads functions/ from project root, not from build output.
     'functions',
+    'cron.log', 'restart_statistics.sh', 'statistics_logs.py', 'bookable_dates.py',
 ]);
 
 const IGNORE_PATTERNS = [/^\.env/];
