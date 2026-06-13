@@ -14,18 +14,18 @@
       gtag('config', 'AW-18125969897');
     </script>
 
-    <title>Latest Ontario DriveTest Available Dates | Road Test Notification</title>
-    <meta name="description" content="See the latest observed G and G2 DriveTest available dates by Ontario test centre.">
+    <title>Latest Ontario DriveTest Bookable Dates | Road Test Notification</title>
+    <meta name="description" content="See the latest observed G and G2 DriveTest bookable dates by Ontario test centre.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.roadtestnotify.ca/available-dates/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Latest Ontario DriveTest Available Dates">
-    <meta property="og:description" content="See the latest observed G and G2 DriveTest available dates by Ontario test centre.">
+    <meta property="og:title" content="Latest Ontario DriveTest Bookable Dates">
+    <meta property="og:description" content="See the latest observed G and G2 DriveTest bookable dates by Ontario test centre.">
     <meta property="og:url" content="https://www.roadtestnotify.ca/available-dates/">
     <meta property="og:site_name" content="Road Test Notification">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Latest Ontario DriveTest Available Dates">
-    <meta name="twitter:description" content="See the latest observed G and G2 DriveTest available dates by Ontario test centre.">
+    <meta name="twitter:title" content="Latest Ontario DriveTest Bookable Dates">
+    <meta name="twitter:description" content="See the latest observed G and G2 DriveTest bookable dates by Ontario test centre.">
 
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -182,6 +182,22 @@
             white-space: nowrap;
         }
 
+        .subscribe-note {
+            margin-top: 20px;
+            color: #333;
+            font-size: 1.05em;
+        }
+
+        .subscribe-note a {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .subscribe-note a:hover {
+            text-decoration: underline;
+        }
+
         .last-updated {
             margin-top: 20px;
             color: #666;
@@ -235,15 +251,14 @@
     <script src="../shared/topbar-loader.js"></script>
 
     <header>
-        <h1>Latest Ontario DriveTest Available Dates</h1>
+        <h1>Latest Ontario DriveTest Bookable Dates</h1>
         <p class="tagline">Latest observed bookable G and G2 dates by Ontario DriveTest centre</p>
     </header>
 
     <div class="container">
         <div class="content-section">
-            <h2>Latest Available Road Test Dates</h2>
-            <p class="intro-text">This page shows the latest bookable G and G2 road test dates found in recent DriveTest scans; availability can change quickly.</p>
-            <p id="statusText" class="status-text">Loading latest available dates...</p>
+            <h2>Latest Bookable Road Test Dates</h2>
+            <p id="statusText" class="status-text">Loading latest bookable dates...</p>
 
             <div class="table-wrapper">
                 <table>
@@ -258,6 +273,7 @@
                     <tbody id="availableDatesTableBody"></tbody>
                 </table>
             </div>
+            <p class="subscribe-note">Do not see your test centre and test type? <a href="/subscribe/">Try subscribing for instant road test notifications.</a></p>
         </div>
     </div>
 
@@ -280,7 +296,7 @@
 
                 const payload = await response.json();
                 allRows = Array.isArray(payload.rows)
-                    ? [...payload.rows].sort((a, b) => Number(a.updatedAtEpochMs) - Number(b.updatedAtEpochMs))
+                    ? [...payload.rows].sort((a, b) => Number(b.updatedAtEpochMs) - Number(a.updatedAtEpochMs))
                     : [];
                 renderTable();
                 window.setInterval(renderTable, 1000);
@@ -311,7 +327,7 @@
 
             statusText.classList.remove('error-text');
             statusText.textContent = allRows.length === 0
-                ? 'No latest available dates found.'
+                ? 'No latest bookable dates found.'
                 : '';
         }
 
