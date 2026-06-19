@@ -1,174 +1,134 @@
 {
-  "generatedAt": "2026-06-19T20:00:08.068551+00:00",
+  "generatedAt": "2026-06-19T21:00:07.356723+00:00",
   "sourceDirectory": "../drive-test-assistant/output/downloads",
   "rows": [
     {
       "testType": "G",
       "testCentre": "Barrie",
-      "availableDate": "2026-07-23",
-      "availableDateLabel": "July 23, 2026",
-      "updatedAt": "2026-06-19T06:18:33-04:00",
-      "updatedAtEpochMs": 1781864313000
+      "availableDate": "2026-07-20",
+      "availableDateLabel": "July 20, 2026",
+      "updatedAt": "2026-06-19T15:41:12.944504-04:00",
+      "updatedAtEpochMs": 1781898072944
     },
     {
       "testType": "G",
       "testCentre": "Burlington",
       "availableDate": "2026-07-23",
       "availableDateLabel": "July 23, 2026",
-      "updatedAt": "2026-06-19T10:14:38-04:00",
-      "updatedAtEpochMs": 1781878478000
-    },
-    {
-      "testType": "G",
-      "testCentre": "Guelph",
-      "availableDate": "2026-07-27",
-      "availableDateLabel": "July 27, 2026",
-      "updatedAt": "2026-06-19T06:38:29-04:00",
-      "updatedAtEpochMs": 1781865509000
-    },
-    {
-      "testType": "G",
-      "testCentre": "Kitchener",
-      "availableDate": "2026-07-03",
-      "availableDateLabel": "July 3, 2026",
-      "updatedAt": "2026-06-19T06:50:48-04:00",
-      "updatedAtEpochMs": 1781866248000
+      "updatedAt": "2026-06-19T10:05:05-04:00",
+      "updatedAtEpochMs": 1781877905000
     },
     {
       "testType": "G",
       "testCentre": "Lindsay",
       "availableDate": "2026-07-28",
       "availableDateLabel": "July 28, 2026",
-      "updatedAt": "2026-06-19T12:25:09-04:00",
-      "updatedAtEpochMs": 1781886309000
-    },
-    {
-      "testType": "G",
-      "testCentre": "Oakville",
-      "availableDate": "2026-06-22",
-      "availableDateLabel": "June 22, 2026",
-      "updatedAt": "2026-06-19T10:09:46-04:00",
-      "updatedAtEpochMs": 1781878186000
+      "updatedAt": "2026-06-19T12:12:36-04:00",
+      "updatedAtEpochMs": 1781885556000
     },
     {
       "testType": "G",
       "testCentre": "Toronto Downsview",
-      "availableDate": "2026-07-29",
-      "availableDateLabel": "July 29, 2026",
-      "updatedAt": "2026-06-19T10:17:00-04:00",
-      "updatedAtEpochMs": 1781878620000
+      "availableDate": "2026-07-28",
+      "availableDateLabel": "July 28, 2026",
+      "updatedAt": "2026-06-19T16:15:54.944504-04:00",
+      "updatedAtEpochMs": 1781900154944
     },
     {
       "testType": "G",
       "testCentre": "Toronto Etobicoke",
-      "availableDate": "2026-07-23",
-      "availableDateLabel": "July 23, 2026",
-      "updatedAt": "2026-06-19T10:03:24-04:00",
-      "updatedAtEpochMs": 1781877804000
-    },
-    {
-      "testType": "G",
-      "testCentre": "Toronto Port Union",
-      "availableDate": "2026-07-27",
-      "availableDateLabel": "July 27, 2026",
-      "updatedAt": "2026-06-19T06:52:53-04:00",
-      "updatedAtEpochMs": 1781866373000
-    },
-    {
-      "testType": "G2",
-      "testCentre": "Barrie",
-      "availableDate": "2026-07-20",
-      "availableDateLabel": "July 20, 2026",
-      "updatedAt": "2026-06-19T09:39:58-04:00",
-      "updatedAtEpochMs": 1781876398000
+      "availableDate": "2026-07-22",
+      "availableDateLabel": "July 22, 2026",
+      "updatedAt": "2026-06-19T15:53:36.944504-04:00",
+      "updatedAtEpochMs": 1781898816944
     },
     {
       "testType": "G2",
       "testCentre": "Burlington",
       "availableDate": "2026-07-22",
       "availableDateLabel": "July 22, 2026",
-      "updatedAt": "2026-06-19T10:43:42-04:00",
-      "updatedAtEpochMs": 1781880222000
+      "updatedAt": "2026-06-19T10:34:37-04:00",
+      "updatedAtEpochMs": 1781879677000
     },
     {
       "testType": "G2",
       "testCentre": "Guelph",
-      "availableDate": "2026-07-15",
-      "availableDateLabel": "July 15, 2026",
-      "updatedAt": "2026-06-19T10:44:57-04:00",
-      "updatedAtEpochMs": 1781880297000
+      "availableDate": "2026-07-16",
+      "availableDateLabel": "July 16, 2026",
+      "updatedAt": "2026-06-19T15:45:39.944504-04:00",
+      "updatedAtEpochMs": 1781898339944
+    },
+    {
+      "testType": "G2",
+      "testCentre": "Lindsay",
+      "availableDate": "2026-07-22",
+      "availableDateLabel": "July 22, 2026",
+      "updatedAt": "2026-06-19T12:37:17-04:00",
+      "updatedAtEpochMs": 1781887037000
     },
     {
       "testType": "G2",
       "testCentre": "Newmarket",
       "availableDate": "2026-07-28",
       "availableDateLabel": "July 28, 2026",
-      "updatedAt": "2026-06-19T10:12:54-04:00",
-      "updatedAtEpochMs": 1781878374000
+      "updatedAt": "2026-06-19T10:36:42-04:00",
+      "updatedAtEpochMs": 1781879802000
     },
     {
       "testType": "G2",
       "testCentre": "Oakville",
       "availableDate": "2026-07-30",
       "availableDateLabel": "July 30, 2026",
-      "updatedAt": "2026-06-19T12:21:00-04:00",
-      "updatedAtEpochMs": 1781886060000
+      "updatedAt": "2026-06-19T12:27:53-04:00",
+      "updatedAtEpochMs": 1781886473000
     },
     {
       "testType": "G2",
       "testCentre": "Oshawa",
       "availableDate": "2026-07-16",
       "availableDateLabel": "July 16, 2026",
-      "updatedAt": "2026-06-18T09:03:58-04:00",
-      "updatedAtEpochMs": 1781787838000
-    },
-    {
-      "testType": "G2",
-      "testCentre": "Peterborough",
-      "availableDate": "2026-07-08",
-      "availableDateLabel": "July 8, 2026",
-      "updatedAt": "2026-06-19T09:32:06-04:00",
-      "updatedAtEpochMs": 1781875926000
+      "updatedAt": "2026-06-18T08:55:21-04:00",
+      "updatedAtEpochMs": 1781787321000
     },
     {
       "testType": "G2",
       "testCentre": "Renfrew",
       "availableDate": "2026-07-24",
       "availableDateLabel": "July 24, 2026",
-      "updatedAt": "2026-06-19T10:37:31-04:00",
-      "updatedAtEpochMs": 1781879851000
+      "updatedAt": "2026-06-19T10:51:55-04:00",
+      "updatedAtEpochMs": 1781880715000
     },
     {
       "testType": "G2",
       "testCentre": "Smiths Falls",
-      "availableDate": "2026-06-23",
-      "availableDateLabel": "June 23, 2026",
-      "updatedAt": "2026-06-19T06:55:40-04:00",
-      "updatedAtEpochMs": 1781866540000
+      "availableDate": "2026-07-23",
+      "availableDateLabel": "July 23, 2026",
+      "updatedAt": "2026-06-19T16:04:14.944504-04:00",
+      "updatedAtEpochMs": 1781899454944
     },
     {
       "testType": "G2",
       "testCentre": "Toronto Downsview",
       "availableDate": "2026-06-20",
       "availableDateLabel": "June 20, 2026",
-      "updatedAt": "2026-06-19T11:11:15-04:00",
-      "updatedAtEpochMs": 1781881875000
+      "updatedAt": "2026-06-19T10:57:20-04:00",
+      "updatedAtEpochMs": 1781881040000
     },
     {
       "testType": "G2",
       "testCentre": "Toronto Etobicoke",
       "availableDate": "2026-07-14",
       "availableDateLabel": "July 14, 2026",
-      "updatedAt": "2026-06-19T10:07:36-04:00",
-      "updatedAtEpochMs": 1781878056000
+      "updatedAt": "2026-06-19T15:51:28.944504-04:00",
+      "updatedAtEpochMs": 1781898688944
     },
     {
       "testType": "G2",
       "testCentre": "Toronto Port Union",
       "availableDate": "2026-07-24",
       "availableDateLabel": "July 24, 2026",
-      "updatedAt": "2026-06-19T12:00:41-04:00",
-      "updatedAtEpochMs": 1781884841000
+      "updatedAt": "2026-06-19T12:35:49-04:00",
+      "updatedAtEpochMs": 1781886949000
     }
   ]
 }
