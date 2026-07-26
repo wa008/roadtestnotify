@@ -1,198 +1,182 @@
 {
-  "generatedAt": "2026-07-26T13:00:22.254147+00:00",
+  "generatedAt": "2026-07-26T14:00:09.695743+00:00",
   "sourceDirectory": "../drive-test-assistant/output/downloads",
   "rows": [
-    {
-      "testType": "G",
-      "testCentre": "Burlington",
-      "availableDate": "2026-07-27",
-      "availableDateLabel": "July 27, 2026",
-      "updatedAt": "2026-07-24T20:00:21-04:00",
-      "updatedAtEpochMs": 1784937621000
-    },
-    {
-      "testType": "G",
-      "testCentre": "Lindsay",
-      "availableDate": "2026-09-01",
-      "availableDateLabel": "September 1, 2026",
-      "updatedAt": "2026-07-25T17:57:08-04:00",
-      "updatedAtEpochMs": 1785016628000
-    },
     {
       "testType": "G",
       "testCentre": "Mississauga",
       "availableDate": "2026-07-30",
       "availableDateLabel": "July 30, 2026",
-      "updatedAt": "2026-07-25T17:08:05-04:00",
-      "updatedAtEpochMs": 1785013685000
+      "updatedAt": "2026-07-25T17:20:56-04:00",
+      "updatedAtEpochMs": 1785014456000
+    },
+    {
+      "testType": "G",
+      "testCentre": "Newmarket",
+      "availableDate": "2026-09-02",
+      "availableDateLabel": "September 2, 2026",
+      "updatedAt": "2026-07-25T17:29:12-04:00",
+      "updatedAtEpochMs": 1785014952000
     },
     {
       "testType": "G",
       "testCentre": "Oakville",
       "availableDate": "2026-09-03",
       "availableDateLabel": "September 3, 2026",
-      "updatedAt": "2026-07-25T17:20:56-04:00",
-      "updatedAtEpochMs": 1785014456000
+      "updatedAt": "2026-07-25T16:54:10-04:00",
+      "updatedAtEpochMs": 1785012850000
+    },
+    {
+      "testType": "G",
+      "testCentre": "Oshawa",
+      "availableDate": "2026-09-02",
+      "availableDateLabel": "September 2, 2026",
+      "updatedAt": "2026-07-25T17:16:51-04:00",
+      "updatedAtEpochMs": 1785014211000
     },
     {
       "testType": "G",
       "testCentre": "Smiths Falls",
       "availableDate": "2026-09-01",
       "availableDateLabel": "September 1, 2026",
-      "updatedAt": "2026-07-25T16:34:34-04:00",
-      "updatedAtEpochMs": 1785011674000
+      "updatedAt": "2026-07-25T16:44:13-04:00",
+      "updatedAtEpochMs": 1785012253000
     },
     {
       "testType": "G",
       "testCentre": "Toronto Downsview",
       "availableDate": "2026-09-02",
       "availableDateLabel": "September 2, 2026",
-      "updatedAt": "2026-07-25T17:25:03-04:00",
-      "updatedAtEpochMs": 1785014703000
+      "updatedAt": "2026-07-25T17:33:16-04:00",
+      "updatedAtEpochMs": 1785015196000
     },
     {
       "testType": "G",
       "testCentre": "Toronto Etobicoke",
       "availableDate": "2026-09-01",
       "availableDateLabel": "September 1, 2026",
-      "updatedAt": "2026-07-25T17:32:34-04:00",
-      "updatedAtEpochMs": 1785015154000
+      "updatedAt": "2026-07-25T17:17:03-04:00",
+      "updatedAtEpochMs": 1785014223000
     },
     {
       "testType": "G",
       "testCentre": "Toronto Metro East",
       "availableDate": "2026-09-01",
       "availableDateLabel": "September 1, 2026",
-      "updatedAt": "2026-07-25T17:38:31-04:00",
-      "updatedAtEpochMs": 1785015511000
+      "updatedAt": "2026-07-25T17:24:08-04:00",
+      "updatedAtEpochMs": 1785014648000
     },
     {
       "testType": "G",
       "testCentre": "Toronto Port Union",
       "availableDate": "2026-09-02",
       "availableDateLabel": "September 2, 2026",
-      "updatedAt": "2026-07-25T17:20:41-04:00",
-      "updatedAtEpochMs": 1785014441000
+      "updatedAt": "2026-07-25T16:45:52-04:00",
+      "updatedAtEpochMs": 1785012352000
     },
     {
       "testType": "G2",
       "testCentre": "Barrie",
       "availableDate": "2026-09-01",
       "availableDateLabel": "September 1, 2026",
-      "updatedAt": "2026-07-25T17:30:51-04:00",
-      "updatedAtEpochMs": 1785015051000
+      "updatedAt": "2026-07-25T17:41:35-04:00",
+      "updatedAtEpochMs": 1785015695000
     },
     {
       "testType": "G2",
       "testCentre": "Burlington",
       "availableDate": "2026-09-01",
       "availableDateLabel": "September 1, 2026",
-      "updatedAt": "2026-07-25T17:13:23-04:00",
-      "updatedAtEpochMs": 1785014003000
-    },
-    {
-      "testType": "G2",
-      "testCentre": "Fort Frances",
-      "availableDate": "2026-08-24",
-      "availableDateLabel": "August 24, 2026",
-      "updatedAt": "2026-07-25T17:17:51-04:00",
-      "updatedAtEpochMs": 1785014271000
+      "updatedAt": "2026-07-25T17:01:40-04:00",
+      "updatedAtEpochMs": 1785013300000
     },
     {
       "testType": "G2",
       "testCentre": "Guelph",
       "availableDate": "2026-09-02",
       "availableDateLabel": "September 2, 2026",
-      "updatedAt": "2026-07-25T17:54:20-04:00",
-      "updatedAtEpochMs": 1785016460000
-    },
-    {
-      "testType": "G2",
-      "testCentre": "Kitchener",
-      "availableDate": "2026-09-01",
-      "availableDateLabel": "September 1, 2026",
-      "updatedAt": "2026-07-25T17:29:50-04:00",
-      "updatedAtEpochMs": 1785014990000
+      "updatedAt": "2026-07-25T17:08:33-04:00",
+      "updatedAtEpochMs": 1785013713000
     },
     {
       "testType": "G2",
       "testCentre": "Lindsay",
       "availableDate": "2026-09-01",
       "availableDateLabel": "September 1, 2026",
-      "updatedAt": "2026-07-25T17:53:19-04:00",
-      "updatedAtEpochMs": 1785016399000
+      "updatedAt": "2026-07-25T17:50:40-04:00",
+      "updatedAtEpochMs": 1785016240000
     },
     {
       "testType": "G2",
       "testCentre": "Newmarket",
       "availableDate": "2026-09-03",
       "availableDateLabel": "September 3, 2026",
-      "updatedAt": "2026-07-25T17:14:29-04:00",
-      "updatedAtEpochMs": 1785014069000
+      "updatedAt": "2026-07-25T18:00:54-04:00",
+      "updatedAtEpochMs": 1785016854000
     },
     {
       "testType": "G2",
       "testCentre": "Oakville",
       "availableDate": "2026-09-04",
       "availableDateLabel": "September 4, 2026",
-      "updatedAt": "2026-07-25T17:18:48-04:00",
-      "updatedAtEpochMs": 1785014328000
-    },
-    {
-      "testType": "G2",
-      "testCentre": "Ottawa Canotek",
-      "availableDate": "2026-08-18",
-      "availableDateLabel": "August 18, 2026",
-      "updatedAt": "2026-07-25T16:59:38-04:00",
-      "updatedAtEpochMs": 1785013178000
+      "updatedAt": "2026-07-25T17:51:28-04:00",
+      "updatedAtEpochMs": 1785016288000
     },
     {
       "testType": "G2",
       "testCentre": "Ottawa Walkley",
       "availableDate": "2026-09-04",
       "availableDateLabel": "September 4, 2026",
-      "updatedAt": "2026-07-25T17:07:53-04:00",
-      "updatedAtEpochMs": 1785013673000
+      "updatedAt": "2026-07-25T16:57:59-04:00",
+      "updatedAtEpochMs": 1785013079000
     },
     {
       "testType": "G2",
-      "testCentre": "Sudbury",
-      "availableDate": "2026-08-26",
-      "availableDateLabel": "August 26, 2026",
-      "updatedAt": "2026-07-25T17:29:26-04:00",
-      "updatedAtEpochMs": 1785014966000
+      "testCentre": "Smiths Falls",
+      "availableDate": "2026-09-03",
+      "availableDateLabel": "September 3, 2026",
+      "updatedAt": "2026-07-25T17:06:59-04:00",
+      "updatedAtEpochMs": 1785013619000
+    },
+    {
+      "testType": "G2",
+      "testCentre": "Toronto Downsview",
+      "availableDate": "2026-09-03",
+      "availableDateLabel": "September 3, 2026",
+      "updatedAt": "2026-07-25T17:32:10-04:00",
+      "updatedAtEpochMs": 1785015130000
     },
     {
       "testType": "G2",
       "testCentre": "Toronto Etobicoke",
       "availableDate": "2026-09-03",
       "availableDateLabel": "September 3, 2026",
-      "updatedAt": "2026-07-25T17:19:53-04:00",
-      "updatedAtEpochMs": 1785014393000
+      "updatedAt": "2026-07-25T17:06:19-04:00",
+      "updatedAtEpochMs": 1785013579000
     },
     {
       "testType": "G2",
       "testCentre": "Toronto Metro East",
       "availableDate": "2026-08-31",
       "availableDateLabel": "August 31, 2026",
-      "updatedAt": "2026-07-25T18:01:36-04:00",
-      "updatedAtEpochMs": 1785016896000
+      "updatedAt": "2026-07-25T17:41:18-04:00",
+      "updatedAtEpochMs": 1785015678000
     },
     {
       "testType": "G2",
       "testCentre": "Toronto Port Union",
       "availableDate": "2026-09-03",
       "availableDateLabel": "September 3, 2026",
-      "updatedAt": "2026-07-25T17:40:48-04:00",
-      "updatedAtEpochMs": 1785015648000
+      "updatedAt": "2026-07-25T17:18:39-04:00",
+      "updatedAtEpochMs": 1785014319000
     },
     {
       "testType": "G2",
       "testCentre": "Walkerton",
       "availableDate": "2026-07-27",
       "availableDateLabel": "July 27, 2026",
-      "updatedAt": "2026-07-25T17:33:53-04:00",
-      "updatedAtEpochMs": 1785015233000
+      "updatedAt": "2026-07-25T17:30:33-04:00",
+      "updatedAtEpochMs": 1785015033000
     }
   ]
 }
